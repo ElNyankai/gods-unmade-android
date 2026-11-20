@@ -7,11 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import com.sixseven.godsunmade.ui.navigation.AppNavHost
 import com.sixseven.godsunmade.ui.theme.GodsUnmadeTheme
 
-/** Activity única: aplica el tema y monta la navegación en Compose. */
+// la unica pantalla de la app, aqui arranca todo
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        // dibuja el tema y la navegacion con Compose
         setContent {
             GodsUnmadeTheme { AppNavHost() }
         }

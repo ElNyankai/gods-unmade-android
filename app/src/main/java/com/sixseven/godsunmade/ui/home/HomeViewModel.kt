@@ -5,16 +5,16 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-/** Estados de la pantalla Inicio: Loading, Success con el contenido o Error. */
+// estados de inicio: cargando, bien o error
 sealed interface HomeUiState {
     data object Loading : HomeUiState
     data class Success(val fraseMaestra: String, val logline: String, val avisoLore: String) : HomeUiState
     data class Error(val mensaje: String) : HomeUiState
 }
 
-/** ViewModel de Inicio: expone el contenido estático como StateFlow de solo lectura. */
+// no usa repositorio, el texto de inicio esta escrito aqui
 class HomeViewModel : ViewModel() {
-    // Contenido estático (sin repositorio). TODO: conectar a BD/API si se vuelve dinámico.
+    // TODO: conectar a BD/API si se vuelve dinámico.
     private val _uiState = MutableStateFlow<HomeUiState>(
         HomeUiState.Success(
             fraseMaestra = "Ningún dios debería poder borrar a quienes se atreven a decirle que no",

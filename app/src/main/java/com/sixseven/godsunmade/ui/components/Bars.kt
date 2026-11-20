@@ -21,7 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.sixseven.godsunmade.ui.theme.*
 
-/** Barra superior estilo web: logo ✦ + título, con botón de volver opcional. */
+// barra de arriba con el titulo, y flecha para volver si nos pasan onBack
 @Composable
 fun AppTopBar(title: String, modifier: Modifier = Modifier, onBack: (() -> Unit)? = null) {
     Column(modifier.fillMaxWidth().background(Superficie)) {
@@ -53,10 +53,10 @@ fun AppTopBar(title: String, modifier: Modifier = Modifier, onBack: (() -> Unit)
     }
 }
 
-/** Destino de la barra inferior: ruta, etiqueta e icono. */
+// un boton de la barra de abajo: ruta, texto e icono
 data class BottomDestination(val route: String, val label: String, val icon: ImageVector)
 
-/** Barra inferior: resalta currentRoute y llama a onNavigate con la ruta elegida. */
+// barra de abajo, marca la pestana actual y navega al tocar
 @Composable
 fun AppBottomBar(
     destinations: List<BottomDestination>,
@@ -83,7 +83,7 @@ fun AppBottomBar(
     }
 }
 
-/** Título de sección con separador de bronce; subtitle es opcional. */
+// titulo de seccion con linea dorada debajo
 @Composable
 fun SectionTitle(text: String, modifier: Modifier = Modifier, subtitle: String? = null) {
     Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {

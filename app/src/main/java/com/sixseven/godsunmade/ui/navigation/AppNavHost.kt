@@ -34,7 +34,7 @@ import com.sixseven.godsunmade.ui.story.ChapterDetailViewModel
 import com.sixseven.godsunmade.ui.story.StoryScreen
 import com.sixseven.godsunmade.ui.story.StoryViewModel
 
-/** Rutas de navegación: destinos de nivel superior y rutas de detalle con argumento {id}. */
+// rutas de la app: las de nivel superior y las de detalle con id
 object Routes {
     const val HOME = "inicio"
     const val CHARACTERS = "personajes"
@@ -46,6 +46,7 @@ object Routes {
     fun chapter(id: String) = "capitulo/$id"
 }
 
+// los 4 botones de la barra de abajo
 private val bottomDestinations = listOf(
     BottomDestination(Routes.HOME, "Inicio", Icons.Default.Home),
     BottomDestination(Routes.CHARACTERS, "Personajes", Icons.Default.Person),
@@ -53,26 +54,19 @@ private val bottomDestinations = listOf(
     BottomDestination(Routes.LEADERBOARD, "Top", Icons.Default.Star),
 )
 
-// Al cambiar de destino de nivel superior: popUpTo guarda su estado, restoreState lo recupera y launchSingleTop evita duplicarlo.
+// al cambiar de pestana se guarda donde estabamos y se recupera al volver
 private fun NavHostController.navigateTopLevel(route: String) = navigate(route) {
     popUpTo(graph.findStartDestination().id) { saveState = true }
     launchSingleTop = true
     restoreState = true
 }
 
-/**
- * Grafo de navegación de la app con Navigation Compose.
- *
- * - Rutas definidas en [Routes]; cada destino crea su ViewModel con AppViewModelProvider.Factory.
- * - Bottom bar con 4 destinos de nivel superior (Inicio, Personajes, Historia, Top);
- *   navigateTopLevel guarda y restaura el estado de cada uno.
- * - Rutas de detalle: personaje/{id} y capitulo/{id}.
- * - Para cambiar a API/BD solo se modifica AppContainer, no la navegación.
- */
+// grafo de navegacion, cada ruta crea su ViewModel y muestra su pantalla
 @Composable
 fun AppNavHost(navController: NavHostController = rememberNavController()) {
     val entry by navController.currentBackStackEntryAsState()
     val route = entry?.destination?.route
+    // la barra de abajo solo aparece en las 4 pantallas principales
     val showBottomBar = bottomDestinations.any { it.route == route }
 
     Scaffold(
@@ -95,6 +89,7 @@ fun AppNavHost(navController: NavHostController = rememberNavController()) {
                     onCharacterClick = { navController.navigate(Routes.character(it)) },
                 )
             }
+            // detalle de personaje, el id llega por la ruta
             composable(Routes.CHARACTER_DETAIL) {
                 val vm: CharacterDetailViewModel = viewModel(factory = AppViewModelProvider.Factory)
                 val state by vm.uiState.collectAsStateWithLifecycle()

@@ -23,7 +23,7 @@ import com.sixseven.godsunmade.data.model.StoryChapter
 import com.sixseven.godsunmade.data.model.StorySection
 import com.sixseven.godsunmade.ui.theme.*
 
-/** Etiqueta roja "SPOILERS" que indica que el capítulo revela giros importantes. */
+// etiqueta roja que avisa que hay spoilers
 @Composable
 fun SpoilerBadge(modifier: Modifier = Modifier) {
     Text(
@@ -34,7 +34,7 @@ fun SpoilerBadge(modifier: Modifier = Modifier) {
     )
 }
 
-/** Advertencia antes de leer un capítulo con spoilers; onContinue acepta y onBack vuelve atrás. */
+// pantalla de aviso antes de leer, deja seguir o volver
 @Composable
 fun SpoilerWarning(onContinue: () -> Unit, onBack: () -> Unit, modifier: Modifier = Modifier) {
     Column(
@@ -60,11 +60,12 @@ fun SpoilerWarning(onContinue: () -> Unit, onBack: () -> Unit, modifier: Modifie
     }
 }
 
+// degradado oscuro para que se lea el texto sobre la imagen
 private val darkFade = Brush.verticalGradient(
     listOf(Sombra.copy(alpha = 0.15f), Sombra.copy(alpha = 0.55f), Sombra.copy(alpha = 0.95f)),
 )
 
-/** Tarjeta grande: imagen o arte de fondo con degradado oscuro, número, título y resumen superpuestos. */
+// tarjeta del capitulo con imagen de fondo y titulo encima
 @Composable
 fun StoryChapterCard(
     chapter: StoryChapter,
@@ -99,7 +100,7 @@ fun StoryChapterCard(
     }
 }
 
-/** Encabezado ilustrado de sección: arte generado + título + descripción. */
+// encabezado de seccion con dibujo a la izquierda
 @Composable
 fun StorySectionHeader(section: StorySection, modifier: Modifier = Modifier) {
     val arte = when (section) {

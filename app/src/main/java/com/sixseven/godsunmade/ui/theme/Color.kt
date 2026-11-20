@@ -2,7 +2,7 @@ package com.sixseven.godsunmade.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Paleta tomada de static/css y base.html de la web de referencia.
+// colores de la app, sacados de la web de referencia
 val Fondo = Color(0xFF171C2A)
 val Superficie = Color(0xFF202B40)
 val SuperficieAlta = Color(0xFF2A3650)

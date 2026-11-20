@@ -18,3 +18,11 @@ local.properties
 *.log
 build/
 .gradle/
+.claude/
+build/
+.gradle/
+.idea/
+.kotlin/
+local.properties
+*.iml
+docs/

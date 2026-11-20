@@ -28,7 +28,7 @@ import com.sixseven.godsunmade.ui.components.SectionTitle
 import com.sixseven.godsunmade.ui.navigation.Routes
 import com.sixseven.godsunmade.ui.theme.*
 
-/** Pantalla de inicio: recibe el estado y llama a onNavigate con la ruta de los accesos rápidos. */
+// segun el estado muestra carga, error o el contenido
 @Composable
 fun HomeScreen(state: HomeUiState, onNavigate: (String) -> Unit, modifier: Modifier = Modifier) {
     Column(modifier.fillMaxSize()) {
@@ -41,6 +41,7 @@ fun HomeScreen(state: HomeUiState, onNavigate: (String) -> Unit, modifier: Modif
     }
 }
 
+// portada, frase, texto y los accesos rapidos
 @Composable
 private fun HomeContent(state: HomeUiState.Success, onNavigate: (String) -> Unit) {
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(20.dp)) {
@@ -78,6 +79,7 @@ private fun HomeContent(state: HomeUiState.Success, onNavigate: (String) -> Unit
     }
 }
 
+// tarjeta de acceso rapido, al tocarla nos manda a otra pantalla
 @Composable
 private fun QuickAccess(title: String, subtitle: String, glyph: String, onClick: () -> Unit) {
     Card(

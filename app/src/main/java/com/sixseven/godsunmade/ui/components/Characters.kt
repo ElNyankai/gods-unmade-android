@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.sixseven.godsunmade.data.model.Character
 import com.sixseven.godsunmade.ui.theme.*
 
-/** Imagen del personaje. El protagonista usa Fit (como la web, object-contain); el resto Crop. */
+// imagen del personaje, si no hay foto mostramos la inicial
 @Composable
 fun CharacterAvatar(character: Character, modifier: Modifier = Modifier, height: Dp = 200.dp) {
     val res = drawableFor(character.imagen)
@@ -41,13 +41,11 @@ fun CharacterAvatar(character: Character, modifier: Modifier = Modifier, height:
     }
 }
 
-/** Etiqueta "REGISTRO" con el código del personaje. */
 @Composable
 fun RegistroLabel(registro: String, modifier: Modifier = Modifier) {
     Text("REGISTRO $registro", modifier, style = MaterialTheme.typography.labelMedium, color = Bronce)
 }
 
-/** Etiqueta en mayúsculas con fondo arcilla para la etiqueta de un personaje. */
 @Composable
 fun TagLabel(text: String, modifier: Modifier = Modifier) {
     Text(
@@ -58,7 +56,7 @@ fun TagLabel(text: String, modifier: Modifier = Modifier) {
     )
 }
 
-/** Bloque "Objetivo principal" con el texto del objetivo del personaje. */
+// recuadro con el objetivo principal del personaje
 @Composable
 fun ObjectiveBlock(text: String, modifier: Modifier = Modifier) {
     Row(modifier.fillMaxWidth().background(Fondo.copy(alpha = 0.6f)).height(IntrinsicSize.Min)) {
@@ -72,7 +70,7 @@ fun ObjectiveBlock(text: String, modifier: Modifier = Modifier) {
 
 private val cardShape = RoundedCornerShape(2.dp)
 
-/** Tarjeta de enemigo/jefe: imagen arriba, registro, nombre y descripción. */
+// tarjeta de enemigo o jefe que sale en la lista
 @Composable
 fun CharacterCard(character: Character, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Card(
@@ -92,7 +90,7 @@ fun CharacterCard(character: Character, onClick: () -> Unit, modifier: Modifier 
     }
 }
 
-/** Tarjeta grande del protagonista (imagen + texto + bloque de objetivo). */
+// tarjeta grande del protagonista, con su objetivo abajo
 @Composable
 fun FeaturedCharacterCard(character: Character, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Card(

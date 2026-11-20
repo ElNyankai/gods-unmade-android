@@ -31,7 +31,7 @@ import com.sixseven.godsunmade.R
 import com.sixseven.godsunmade.ui.components.*
 import com.sixseven.godsunmade.ui.theme.*
 
-/** Pantalla de historia: héroe, capítulos destacados y secciones; onChapterClick recibe el id del capítulo. */
+// pantalla de historia: cabecera, destacados y secciones
 @Composable
 fun StoryScreen(
     state: StoryUiState,
@@ -87,7 +87,7 @@ private fun StoryHero() {
     }
 }
 
-/** Detalle de capítulo: muestra la advertencia de spoilers si hace falta y luego el contenido. */
+// si el capitulo tiene spoilers, primero sale la advertencia
 @Composable
 fun ChapterDetailScreen(
     state: ChapterUiState,
@@ -108,13 +108,13 @@ fun ChapterDetailScreen(
     }
 }
 
+// texto del capitulo, la cabecera se desvanece al bajar
 @Composable
 private fun ChapterBody(state: ChapterUiState.Success) {
     val c = state.capitulo
     val scroll = rememberScrollState()
     val headerPx = with(LocalDensity.current) { 280.dp.toPx() }
     Column(Modifier.fillMaxSize().verticalScroll(scroll)) {
-        // Cabecera a todo el ancho que se colapsa (parallax + desvanecido) al hacer scroll.
         Box(
             Modifier.fillMaxWidth().height(280.dp).graphicsLayer {
                 translationY = scroll.value * 0.5f
@@ -130,7 +130,7 @@ private fun ChapterBody(state: ChapterUiState.Success) {
             }
         }
         Column(Modifier.padding(horizontal = 20.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
-            // Cita destacada
+            // el resumen va en una barra roja a la izquierda
             Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min)) {
                 Box(Modifier.width(4.dp).fillMaxHeight().background(Arcilla))
                 Text(
@@ -141,6 +141,7 @@ private fun ChapterBody(state: ChapterUiState.Success) {
                 )
             }
             OrnamentDivider()
+            // el primer parrafo lleva letra grande y cada dos un separador
             c.contenido.forEachIndexed { i, parrafo ->
                 if (i == 0) DropCapParagraph(parrafo)
                 else Text(parrafo, style = MaterialTheme.typography.bodyLarge, color = Lino)
@@ -151,7 +152,7 @@ private fun ChapterBody(state: ChapterUiState.Success) {
     }
 }
 
-/** Párrafo con inicial grande. */
+// parrafo con la primera letra grande
 @Composable
 private fun DropCapParagraph(text: String) {
     if (text.isEmpty()) return

@@ -13,7 +13,7 @@ import com.sixseven.godsunmade.data.model.Character
 import com.sixseven.godsunmade.ui.components.*
 import com.sixseven.godsunmade.ui.theme.*
 
-/** Pantalla de personajes: protagonista destacado y lista de enemigos; onCharacterClick recibe el id. */
+// lista de personajes: el protagonista arriba y luego los enemigos
 @Composable
 fun CharactersScreen(
     state: CharactersUiState,
@@ -51,6 +51,7 @@ fun CharactersScreen(
                         subtitle = "Habitantes de las ruinas",
                     )
                 }
+                // cada enemigo es una tarjeta, al tocarla se abre su detalle
                 items(state.enemigos, key = { it.id }) { p ->
                     CharacterCard(p, onClick = { onCharacterClick(p.id) }, modifier = Modifier.padding(horizontal = 16.dp))
                 }

@@ -6,10 +6,10 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// La web usa monoespaciada para títulos/UI y sans del sistema para el cuerpo.
 private val Titulos = FontFamily.Monospace
 private val Cuerpo = FontFamily.SansSerif
 
+// titulos en monoespaciada y texto normal en sans, como en la web
 val Typography = Typography(
     displayMedium = TextStyle(fontFamily = Titulos, fontWeight = FontWeight.Black, fontSize = 40.sp, letterSpacing = 2.sp),
     headlineMedium = TextStyle(fontFamily = Titulos, fontWeight = FontWeight.Black, fontSize = 26.sp, letterSpacing = 1.sp),

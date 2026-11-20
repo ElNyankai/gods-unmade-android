@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.sixseven.godsunmade.R
 import com.sixseven.godsunmade.ui.theme.*
 
-/** Traduce el nombre de imagen del JSON a un drawable. Devuelve null si no existe. */
+// convierte el nombre de la imagen del json en su drawable
 @DrawableRes
 fun drawableFor(name: String?): Int? = when (name) {
     "protagonista" -> R.drawable.protagonista
@@ -35,7 +35,7 @@ fun drawableFor(name: String?): Int? = when (name) {
     else -> null
 }
 
-/** Separador ◆ ◇ ◆ con líneas de bronce, como en la web. */
+// linea con rombos que separa partes de la pantalla
 @Composable
 fun OrnamentDivider(modifier: Modifier = Modifier) {
     Row(modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
@@ -45,7 +45,7 @@ fun OrnamentDivider(modifier: Modifier = Modifier) {
     }
 }
 
-/** Cabecera de sección: fondo-lore al 20% de opacidad, kicker, título, separador y texto. */
+// cabecera de cada seccion con fondo, titulo y texto
 @Composable
 fun LoreHeader(kicker: String, title: String, body: String, modifier: Modifier = Modifier) {
     Box(modifier.fillMaxWidth()) {

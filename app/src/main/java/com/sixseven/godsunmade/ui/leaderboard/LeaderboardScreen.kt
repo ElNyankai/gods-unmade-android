@@ -12,7 +12,7 @@ import com.sixseven.godsunmade.data.model.Player
 import com.sixseven.godsunmade.ui.components.*
 import com.sixseven.godsunmade.ui.theme.GodsUnmadeTheme
 
-/** Pantalla del ranking: muestra podio y clasificación según state; onRetry reintenta la carga. */
+// pantalla del top: podio y clasificacion, o aviso si no hay nadie
 @Composable
 fun LeaderboardScreen(state: LeaderboardUiState, onRetry: () -> Unit, modifier: Modifier = Modifier) {
     Column(modifier.fillMaxSize()) {
@@ -36,9 +36,9 @@ fun LeaderboardScreen(state: LeaderboardUiState, onRetry: () -> Unit, modifier: 
     }
 }
 
+// acomoda el podio: 2 a la izquierda, 1 al centro y 3 a la derecha
 @Composable
 private fun Podio(podio: List<Player>) {
-    // Orden visual: 2º, 1º, 3º
     val orden = listOfNotNull(podio.getOrNull(1), podio.getOrNull(0), podio.getOrNull(2))
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Bottom) {
         orden.forEach { PodiumItem(it, Modifier.weight(1f)) }

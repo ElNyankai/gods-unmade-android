@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-/** Estados de la lista de historia: Loading, Success con destacados y secciones, o Error. */
+// estados de la lista de historia
 sealed interface StoryUiState {
     data object Loading : StoryUiState
     data class Success(
@@ -21,14 +21,14 @@ sealed interface StoryUiState {
     data class Error(val mensaje: String) : StoryUiState
 }
 
-/** Estados de un capítulo: Loading, Success con el capítulo y si el spoiler fue aceptado, o Error. */
+// estados de un capitulo, incluye si ya se acepto el spoiler
 sealed interface ChapterUiState {
     data object Loading : ChapterUiState
     data class Success(val capitulo: StoryChapter, val spoilerAceptado: Boolean) : ChapterUiState
     data class Error(val mensaje: String) : ChapterUiState
 }
 
-/** ViewModel de la historia: carga los capítulos y los agrupa por sección. */
+// pide los capitulos y los separa por seccion para la lista
 class StoryViewModel(private val repository: StoryRepository) : ViewModel() {
     private val _uiState = MutableStateFlow<StoryUiState>(StoryUiState.Loading)
     val uiState: StateFlow<StoryUiState> = _uiState
@@ -40,7 +40,7 @@ class StoryViewModel(private val repository: StoryRepository) : ViewModel() {
         viewModelScope.launch {
             _uiState.value = runCatching {
                 val capitulos = repository.getChapters()
-                // Agrupa por sección en el orden de StorySection; los destacados se filtran aparte.
+                // juntamos los capitulos por seccion, los destacados van aparte
                 val porSeccion = capitulos.groupBy { it.section }
                 StoryUiState.Success(
                     destacados = capitulos.filter { it.destacado },
@@ -51,12 +51,11 @@ class StoryViewModel(private val repository: StoryRepository) : ViewModel() {
     }
 }
 
-/** ViewModel del detalle de capítulo: carga el capítulo indicado y gestiona la aceptación de spoilers. */
+// ViewModel del capitulo, usa el id de la ruta y guarda si acepto el spoiler
 class ChapterDetailViewModel(
     private val repository: StoryRepository,
     savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
-    // Id de la ruta capitulo/{id}, leído del SavedStateHandle.
     private val id: String = checkNotNull(savedStateHandle["id"])
     private val _uiState = MutableStateFlow<ChapterUiState>(ChapterUiState.Loading)
     val uiState: StateFlow<ChapterUiState> = _uiState
@@ -73,7 +72,7 @@ class ChapterDetailViewModel(
         }
     }
 
-    // Solo marca el spoiler como aceptado; no vuelve a leer el capítulo.
+    // solo cambiamos la marca de spoiler, no volvemos a leer el capitulo
     fun aceptarSpoiler() = _uiState.update { s ->
         if (s is ChapterUiState.Success) s.copy(spoilerAceptado = true) else s
     }

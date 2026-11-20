@@ -13,7 +13,7 @@ import com.sixseven.godsunmade.data.model.Character
 import com.sixseven.godsunmade.ui.components.*
 import com.sixseven.godsunmade.ui.theme.*
 
-/** Detalle de un personaje: imagen, registro, descripción y objetivo; onBack y onRetry son callbacks. */
+// muestra imagen y datos del personaje elegido
 @Composable
 fun CharacterDetailScreen(
     state: CharacterDetailUiState,
@@ -22,6 +22,7 @@ fun CharacterDetailScreen(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier.fillMaxSize()) {
+        // el titulo cambia segun si ya cargo el personaje
         AppTopBar((state as? CharacterDetailUiState.Success)?.personaje?.nombre ?: "Personaje", onBack = onBack)
         when (state) {
             CharacterDetailUiState.Loading -> LoadingView()

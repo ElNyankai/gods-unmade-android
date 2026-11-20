@@ -20,27 +20,24 @@ import androidx.compose.ui.unit.dp
 import com.sixseven.godsunmade.ui.theme.*
 import kotlin.math.min
 
-/**
- * Arte generado con Compose (sin imágenes externas) para los capítulos que no tienen ilustración.
- * tipo: camino, mar, flecha, forja, umbral, hogar, tacha, balanza, aguja, concordancia, escudo, mapa, fragmentos.
- */
+// dibuja el fondo de piedra y el simbolo del tipo
 @Composable
 fun ChapterArt(tipo: String?, modifier: Modifier = Modifier) {
     Canvas(modifier.fillMaxSize()) {
         val w = size.width
         val h = size.height
-        // Fondo: degradado de brasas y piedra
+        // fondo con degradado oscuro y un resplandor al centro
         drawRect(Brush.verticalGradient(listOf(Sombra, ArcillaOscura, Superficie)))
         drawRect(
             Brush.radialGradient(listOf(Bronce.copy(alpha = 0.28f), Color.Transparent), Offset(w / 2, h / 2), min(w, h) * 0.9f),
         )
-        // Textura de bloques de piedra
+        // lineas horizontales que imitan bloques de piedra
         var y = 0f
         while (y < h) {
             drawLine(Bronce.copy(alpha = 0.05f), Offset(0f, y), Offset(w, y), 1f)
             y += 22.dp.toPx()
         }
-        // Brasas
+        // puntitos de brasas repartidos por el dibujo
         for (i in 0 until 14) {
             val px = (i * 977 % 100) / 100f * w
             val py = (i * 389 % 100) / 100f * h
@@ -50,6 +47,7 @@ fun ChapterArt(tipo: String?, modifier: Modifier = Modifier) {
     }
 }
 
+// dibuja el simbolo segun el tipo, con lineas y formas simples
 private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
     val u = min(w, h) * 0.25f
     val cx = w / 2
@@ -59,7 +57,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
     val main = Bronce.copy(alpha = 0.9f)
     val soft = BronceClaro.copy(alpha = 0.5f)
     when (tipo) {
-        // Camino: dos líneas que convergen hacia el horizonte, con huellas en el centro.
+        // dos lineas que llegan al horizonte con huellas
         "camino" -> {
             drawLine(main, Offset(cx - u * 1.6f, h), Offset(cx - u * 0.2f, cy - u * 0.8f), line.width, StrokeCap.Round)
             drawLine(main, Offset(cx + u * 1.6f, h), Offset(cx + u * 0.2f, cy - u * 0.8f), line.width, StrokeCap.Round)
@@ -68,7 +66,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
                 drawLine(soft, Offset(cx, cy - u * 0.7f + t * (h - cy + u * 0.7f)), Offset(cx, cy - u * 0.5f + t * (h - cy + u * 0.7f)), line.width, StrokeCap.Round)
             }
         }
-        // Mar: tres olas sinusoidales, la central resaltada.
+        // tres olas, la del medio mas marcada
         "mar" -> for (k in 0..2) {
             val p = Path()
             val yy = cy - u * 0.5f + k * u * 0.55f
@@ -80,7 +78,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             }
             drawPath(p, if (k == 1) main else soft, style = line)
         }
-        // Flecha: asta diagonal con punta triangular y plumas en el extremo.
+        // asta con punta y plumas
         "flecha" -> {
             val a = Offset(cx - u * 1.2f, cy + u * 0.9f)
             val b = Offset(cx + u * 1.2f, cy - u * 0.9f)
@@ -93,7 +91,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             drawLine(soft, Offset(a.x + u * 0.25f, a.y - u * 0.17f), Offset(a.x - u * 0.05f, a.y - u * 0.37f), line.width, StrokeCap.Round)
             drawCircle(soft, u * 0.45f, Offset(cx + u * 0.9f, cy + u * 0.7f), style = thin)
         }
-        // Forja: crisol con chispas que suben desde el centro.
+        // crisol con chispas que suben
         "forja" -> {
             val p = Path().apply {
                 moveTo(cx - u * 1.2f, cy - u * 0.1f); lineTo(cx + u * 1.1f, cy - u * 0.1f)
@@ -106,7 +104,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
                 drawLine(soft, Offset(cx, cy - u * 0.2f), Offset(cx + ang * u * 0.9f, cy - u * (0.7f + (i % 2) * 0.5f)), thin.width, StrokeCap.Round)
             }
         }
-        // Umbral: marco de puerta con arco interior y línea de suelo.
+        // marco de puerta con arco
         "umbral" -> {
             drawRect(main, Offset(cx - u, cy - u * 0.9f), Size(u * 2, u * 1.9f), style = line)
             drawRect(soft, Offset(cx - u * 1.2f, cy - u * 1.1f), Size(u * 2.4f, u * 0.22f), style = thin)
@@ -117,7 +115,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             drawPath(arch, soft, style = thin)
             drawLine(soft, Offset(cx, cy + u), Offset(cx, h), thin.width)
         }
-        // Hogar: tres llamas sobre una base horizontal.
+        // tres llamas sobre una base
         "hogar" -> {
             for (k in 0..2) {
                 val s = if (k == 1) 1.3f else 0.9f
@@ -131,14 +129,14 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             }
             drawLine(main, Offset(cx - u * 1.5f, cy + u * 0.95f), Offset(cx + u * 1.5f, cy + u * 0.95f), line.width, StrokeCap.Round)
         }
-        // Tacha: círculo con trazo cruzado, símbolo de rechazo.
+        // circulo tachado, significa rechazo
         "tacha" -> {
             drawCircle(soft, u, Offset(cx, cy), style = thin)
             drawLine(main, Offset(cx - u * 1.3f, cy + u * 1.1f), Offset(cx + u * 1.3f, cy - u * 1.1f), line.width * 1.3f, StrokeCap.Round)
             drawLine(soft, Offset(cx - u * 0.9f, cy - u * 0.3f), Offset(cx + u * 0.3f, cy - u * 0.3f), thin.width, StrokeCap.Round)
             drawLine(soft, Offset(cx - u * 0.5f, cy + u * 0.4f), Offset(cx + u * 0.8f, cy + u * 0.4f), thin.width, StrokeCap.Round)
         }
-        // Balanza: fiel con dos platillos colgando y base.
+        // balanza con dos platillos
         "balanza" -> {
             drawLine(main, Offset(cx, cy - u), Offset(cx, cy + u), line.width, StrokeCap.Round)
             drawLine(main, Offset(cx - u * 1.2f, cy - u * 0.6f), Offset(cx + u * 1.2f, cy - u * 0.6f), line.width, StrokeCap.Round)
@@ -150,7 +148,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             }
             drawLine(main, Offset(cx - u * 0.5f, cy + u), Offset(cx + u * 0.5f, cy + u), line.width, StrokeCap.Round)
         }
-        // Aguja: hilo que sale del ojo de una aguja en curva.
+        // aguja con el hilo saliendo
         "aguja" -> {
             val a = Offset(cx - u * 1.3f, cy + u * 0.9f)
             val b = Offset(cx + u * 1.3f, cy - u * 0.9f)
@@ -162,13 +160,13 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             }
             drawPath(thread, soft, style = thin)
         }
-        // Concordancia: tres círculos superpuestos en triángulo.
+        // tres circulos juntos en triangulo
         "concordancia" -> {
             drawCircle(main, u * 0.8f, Offset(cx, cy - u * 0.45f), style = line)
             drawCircle(soft, u * 0.8f, Offset(cx - u * 0.7f, cy + u * 0.4f), style = line)
             drawCircle(soft, u * 0.8f, Offset(cx + u * 0.7f, cy + u * 0.4f), style = line)
         }
-        // Escudo: silueta con eje vertical y franja horizontal.
+        // escudo con una franja en el medio
         "escudo" -> {
             val p = Path().apply {
                 moveTo(cx - u * 0.9f, cy - u * 0.9f); lineTo(cx + u * 0.9f, cy - u * 0.9f)
@@ -180,8 +178,8 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             drawLine(soft, Offset(cx, cy - u * 0.9f), Offset(cx, cy + u * 1.1f), thin.width)
             drawLine(soft, Offset(cx - u * 0.9f, cy - u * 0.2f), Offset(cx + u * 0.9f, cy - u * 0.2f), thin.width)
         }
+        // costa con montanas y una brujula
         "mapa" -> {
-            // Península con montañas y una pequeña brújula
             val costa = Path().apply {
                 moveTo(cx - 1.3f * u, cy - 0.45f * u); lineTo(cx - 0.5f * u, cy - 0.9f * u)
                 lineTo(cx + 0.5f * u, cy - 0.8f * u); lineTo(cx + 1.0f * u, cy - 0.3f * u)
@@ -205,8 +203,8 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             drawLine(main, Offset(bx, by - 0.45f * u), Offset(bx, by + 0.45f * u), thin.width, StrokeCap.Round)
             drawLine(soft, Offset(bx - 0.45f * u, by), Offset(bx + 0.45f * u, by), thin.width, StrokeCap.Round)
         }
+        // anillo roto con esquirlas alrededor
         "fragmentos" -> {
-            // Anillo roto en arcos con huecos, esquirlas flotando y un eco tenue
             val tl = Offset(cx - u, cy - u)
             val sz = Size(2 * u, 2 * u)
             drawArc(main, 200f, 95f, false, tl, sz, style = line)
@@ -228,7 +226,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
     }
 }
 
-/** Imagen del capítulo si existe; si no, arte generado. */
+// usa la imagen del capitulo si existe, si no dibuja el arte
 @Composable
 fun ChapterVisual(imagen: String?, arte: String?, modifier: Modifier = Modifier) {
     val res = drawableFor(imagen)
