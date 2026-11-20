@@ -1,0 +1,349 @@
+[
+  {
+    "id": "concordancia",
+    "orden": 1,
+    "titulo": "La Concordancia",
+    "resumen": "Pacto por el que ciertas acciones quedan sostenidas por tres testimonios: mundo, dios y mortales.",
+    "contenido": [
+      "En Lárion, el mar moja las piedras, los vientos derriban árboles y las personas pueden caminar aunque ningún dios las observe. Los dioses no fabricaron esas cosas ni son sus propietarios: son entidades antiquísimas que pueden acompañar, encauzar y dar continuidad a determinadas relaciones del mundo.",
+      "Tras las guerras entre las potencias antiguas y el ascenso olímpico, dioses y mortales establecieron la Concordancia, un pacto por el que ciertas acciones quedan sostenidas por tres testimonios inseparables.",
+      "Mundo: una realidad material que puede seguir existiendo por sí misma. Dios: la voluntad divina que conoce y custodia una relación con esa realidad. Mortales: personas que ejercen, recuerdan, transforman y pueden aceptar o rechazar esa relación.",
+      "La Concordancia no es una cadena física que sostenga el océano. Es la forma en que lo divino puede intervenir sin convertir el mundo en propiedad. Sus vínculos particulares se llaman Aspectos Divinos.",
+      "La adoración no es combustible mágico: un lugar sin culto puede prosperar. El vínculo depende de experiencias, prácticas y consentimiento, no del número de creyentes."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "fundamentos",
+    "imagen": "historia",
+    "arte": null,
+    "destacado": true
+  },
+  {
+    "id": "aspectos_divinos",
+    "orden": 2,
+    "titulo": "Qué es un Aspecto Divino",
+    "resumen": "Un Aspecto es una relación específica, no la totalidad del dominio de un dios; arrancarlo por la fuerza provoca una herida en la Concordancia.",
+    "contenido": [
+      "Un Aspecto es una relación específica y no la totalidad del dominio de un dios. Hermes puede seguir moviendo los pies cuando pierde el Paso, pero ya no custodia bien los cruces: los caminos se repiten, las cartas no llegan y una puerta lleva a la misma habitación.",
+      "Poseidón no pierde toda el agua al perder el Retorno de Marea: las aguas quedan atrapadas en movimientos incompletos y las corrientes no sueltan lo que arrastran.",
+      "Un Aspecto violentamente arrancado causa una herida en la Concordancia. Que un pueblo termine libremente su vínculo con un dios no produce necesariamente esa herida, porque existen procedimientos olvidados para transformar o cerrar un vínculo sin desgarrarlo.",
+      "Los Aspectos perdidos sobreviven como Vestigios: condensaciones inestables de materia, recuerdo y decisión. Un Vestigio no es automáticamente un regalo: debe ser comprendido y restituido."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "fundamentos",
+    "imagen": "fondo_lore",
+    "arte": null,
+    "destacado": false
+  },
+  {
+    "id": "leyes_del_universo",
+    "orden": 3,
+    "titulo": "Leyes que nunca deben romperse",
+    "resumen": "Reglas que limitan lo que los dioses y el protagonista pueden hacer con los Aspectos.",
+    "contenido": [
+      "Un dios no puede borrar impunemente una ley física; puede desordenar sus correspondencias y modos de intervención.",
+      "Nadie regresa de la muerte ordinaria por restaurar un Aspecto. El mundo admite duelo, no resurrecciones gratuitas.",
+      "El protagonista no roba los poderes de Hermes ni sustituye a los dioses: al reparar un vínculo conserva una huella compartida de su función, que puede expresarse como habilidad.",
+      "Un vínculo restaurado con violencia vuelve a quedar vulnerable; la reparación duradera necesita reconocer lo ocurrido y aceptar la voluntad de quienes estaban implicados.",
+      "La memoria puede perderse, alterarse u ocultarse, pero no es una prueba perfecta: los documentos, las personas y las consecuencias materiales se contrastan.",
+      "El pacto puede cambiar y no existe profecía inmutable. La magia no soluciona por sí sola la responsabilidad política, el hambre, el duelo ni el daño ya causado."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "fundamentos",
+    "imagen": null,
+    "arte": "balanza",
+    "destacado": false
+  },
+  {
+    "id": "clausula_olvidada",
+    "orden": 4,
+    "titulo": "La cláusula olvidada",
+    "resumen": "El Derecho al Desasimiento permitía a cada comunidad renegociar o terminar su vínculo con una divinidad.",
+    "contenido": [
+      "La Concordancia original contenía el Derecho al Desasimiento: ninguna comunidad estaba condenada a mantener para siempre su vínculo con una divinidad. Podía renegociarlo mediante tres testimonios sinceros.",
+      "Con los siglos, el Olimpo convirtió un acuerdo recíproco en una tradición que parecía inalterable. Fue un proceso gradual y político, no una conspiración mágica de todos los dioses a la vez.",
+      "La formulación antigua sobrevivió en hogares sin templo, canciones de trabajo y registros que la autoridad consideró triviales. Hestia fue su testigo más persistente."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "fundamentos",
+    "imagen": null,
+    "arte": "hogar",
+    "destacado": false
+  },
+  {
+    "id": "elethra",
+    "orden": 5,
+    "titulo": "La ciudad que quiso decir que no",
+    "resumen": "Hace 83 años, Elethra practicó la cláusula antigua y demostró que la libertad era viable, algo peligroso para el poder olímpico.",
+    "contenido": [
+      "Hace 83 años, Elethra creció alrededor de un cruce de caminos, un hogar comunitario y un pequeño puerto interior. Sus habitantes eran comerciantes, agricultores, herreros, cartógrafos y familias de procedencias distintas. No eran enemigos de los dioses: algunos los veneraban, otros dudaban y muchos deseaban una relación menos sometida a oráculos y mandatos.",
+      "La agrupación de escribas liderada por Calíone recuperó el Derecho al Desasimiento. Los elethranos anunciaron que seguirían respetando a los dioses, pero decidirían por sí mismos cuándo aceptar su intervención.",
+      "El experimento funcionó a pequeña escala: un camino dejó de estar bendecido por Hermes y siguió siendo transitable, y un tribunal aplicó leyes humanas sin consultar a Atenea. Ese éxito volvió peligrosa a la ciudad para un poder sostenido por la costumbre de no ser discutido."
+    ],
+    "tieneSpoilers": true,
+    "seccion": "fundamentos",
+    "imagen": "fractura_panteon",
+    "arte": null,
+    "destacado": true
+  },
+  {
+    "id": "la_tacha",
+    "orden": 6,
+    "titulo": "La Tacha",
+    "resumen": "Zeus autorizó ocultar el caso de Elethra; el método empleado arrancó a la ciudad de las correspondencias que la hacían reconocible.",
+    "contenido": [
+      "Zeus, temiendo un colapso de la autoridad olímpica y el regreso de conflictos entre dioses, autorizó ocultar el caso. No planeó inicialmente matar a toda una ciudad; aceptó un método que prometía aislarla de la memoria común mientras se negociaba en secreto.",
+      "Atenea calculó que una omisión temporal impediría la guerra, pero subestimó el daño. Hefesto construyó la Aguja de la Tacha, capaz de retirar inscripciones de la Concordancia. Hermes llevó la orden sellada sin preguntar su contenido. Hades, al descubrir el resultado, se negó a considerar inexistentes a quienes aún tenían nombre.",
+      "La operación no borró un dato de los archivos: arrancó a Elethra de las correspondencias mediante las que el mundo la reconocía. Los caminos olvidaron su destino, las paredes quedaron fuera de los mapas y la mayoría perdió la capacidad de evocar a quienes habían vivido allí. Un instante de la ciudad quedó suspendido en una región intermedia llamada la Hora Inconclusa.",
+      "No todos los habitantes fueron salvados. Hades preservó los nombres de los pendientes. Algunos supervivientes escaparon físicamente, pero sus recuerdos se deshicieron lentamente. Para el mundo, Elethra nunca existió."
+    ],
+    "tieneSpoilers": true,
+    "seccion": "fundamentos",
+    "imagen": null,
+    "arte": "tacha",
+    "destacado": false
+  },
+  {
+    "id": "testigos_ausentes",
+    "orden": 7,
+    "titulo": "Quienes no empuñaron la Aguja",
+    "resumen": "Hera, Hestia, Poseidón, Artemisa y Apolo no participaron directamente, pero sus omisiones, esfuerzos y silencios difieren entre sí.",
+    "contenido": [
+      "Hera se negó a refrendar un decreto sin testigos mortales y conservó la ruptura del juramento, aunque no pudo impedirla. Hestia salvó una sola cosa: la Tablilla Blanca, que todavía recogía el consentimiento no escrito de la ciudad.",
+      "Poseidón trató de abrir una salida de agua para algunos fugitivos, pero los cruces ya estaban deshechos. Artemisa conservó rastros de los huidos. Apolo fue incapaz de contemplar un futuro que se había convertido en omisión, y sus oráculos posteriores ocultaron esa ceguera.",
+      "No todos los dioses son igualmente culpables, y no son inocentes por no haber empuñado la Aguja. Parte de la historia consiste en distinguir entre órdenes, colaboración, encubrimiento y resistencia."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "fundamentos",
+    "imagen": null,
+    "arte": "escudo",
+    "destacado": false
+  },
+  {
+    "id": "prologo",
+    "orden": 8,
+    "titulo": "Prólogo: La campana sin sonido",
+    "resumen": "El Testigo despierta entre fragmentos de arcilla y lino; Dámaris le ofrece refugio y pide investigar una caravana desaparecida.",
+    "contenido": [
+      "Una persona trata de recorrer un puente, da unos pasos y descubre que sigue en la orilla de partida. Una campana se mueve sin emitir el sonido esperado. En el fondo de un santuario aparece una tablilla agrietada, cálida e imposible de leer.",
+      "El Testigo despierta entre fragmentos de arcilla y lino. Dámaris lo encuentra cerca del Atrio de las Brasas y, en lugar de denunciarlo como mal augurio, le ofrece refugio.",
+      "Una caravana de mensajeros no ha regresado. El camino está abierto, pero sus viajeros no consiguen completarlo. Dámaris pide investigar el Santuario de las Calzadas.",
+      "El protagonista aprende a desplazarse, observar rastros y combatir anomalías nacidas de relaciones rotas. Nadie explica toda la cosmología al principio: el jugador comprende primero lo que deja de funcionar."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "campana",
+    "imagen": "camino_protagonista",
+    "arte": null,
+    "destacado": true
+  },
+  {
+    "id": "acto_1",
+    "orden": 9,
+    "titulo": "Acto I: El camino que no termina",
+    "resumen": "En el Santuario de las Calzadas el Testigo restaura el Paso de Hermes y descubre que una orden antigua lo ligaba a Elethra.",
+    "contenido": [
+      "En el santuario, el Testigo escucha una presencia incapaz de concluir una frase: el eco fracturado de Hermes. No encuentra un dios omnipotente que le regale una técnica. Descubre que el Paso fue extraído y que un sello antiguo conecta el santuario con una correspondencia desaparecida.",
+      "Para restaurar el Aspecto reúne evidencia material de un cruce, recupera un mensaje perdido y completa voluntariamente un trayecto que el santuario ya no reconoce.",
+      "Al restituir el Paso, Hermes recuerda una entrega que juró no recordar: una orden dirigida a Elethra. El Testigo obtiene una huella de su función y puede avanzar por una ruta antes inaccesible.",
+      "El acto termina con una pista: la figura responsable de la fractura no intentaba matar a Hermes, sino abrir un camino hacia un nombre tachado."
+    ],
+    "tieneSpoilers": true,
+    "seccion": "campana",
+    "imagen": "aspecto_hermes",
+    "arte": null,
+    "destacado": true
+  },
+  {
+    "id": "acto_2",
+    "orden": 10,
+    "titulo": "Acto II: El mar que no sabe retirarse",
+    "resumen": "En la costa, Poseidón enfrenta el costo de la campaña de Calíone: mareas estancadas, escasez y una aliada que empieza a dudar.",
+    "contenido": [
+      "La costa revela el costo real de la campaña de Calíone. La marea permanece donde no debería, los pescadores quedan separados de sus hogares y un poblado sufre escasez.",
+      "Poseidón descubre que la gente necesita soluciones antes que proclamaciones. Myrto, seguidora de Calíone, ayuda a repartir provisiones; cree que acabar con el monopolio divino es necesario, pero empieza a dudar de los métodos al ver heridos.",
+      "La restauración del Retorno de Marea devuelve agua a una ruta y permite a la comunidad decidir cómo usar el puerto. Una grieta en el lecho marino conduce a talleres antiguos con sellos vinculados a Hefesto."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "campana",
+    "imagen": null,
+    "arte": "mar",
+    "destacado": false
+  },
+  {
+    "id": "acto_3",
+    "orden": 11,
+    "titulo": "Acto III: Lo que la caza y la profecía no encuentran",
+    "resumen": "Artemisa y Apolo revelan que lo ocurrido en Elethra no era inevitable, y una canción nombra por primera vez la ciudad.",
+    "contenido": [
+      "En el Bosque de las Sendas Veladas, las huellas se interrumpen porque algunas personas fueron expulsadas de la historia. Artemisa revela que años atrás siguió a supervivientes de una ciudad que luego nadie pudo nombrar. Conservó pruebas, pero calló creyendo que salvaría al resto de los fugitivos.",
+      "En el Observatorio, Apolo reconoce que sus profecías estuvieron incompletas desde la Tacha. Las pistas de ambos contradicen el relato del Olimpo: lo ocurrido no era inevitable.",
+      "Una canción preservada por viajeros nombra por primera vez Elethra. El jugador descubre testimonios independientes que coinciden en detalles verificables."
+    ],
+    "tieneSpoilers": true,
+    "seccion": "campana",
+    "imagen": null,
+    "arte": "flecha",
+    "destacado": false
+  },
+  {
+    "id": "acto_4",
+    "orden": 12,
+    "titulo": "Acto IV: Las manos que fabricaron el silencio",
+    "resumen": "En las Forjas y la Acrópolis se confirma que Hefesto creó la Aguja y que Atenea calculó la Tacha; Hera señala la falta de la voz mortal.",
+    "contenido": [
+      "En las Forjas de la Unión, un registro de fabricación relaciona la Aguja de la Tacha con una orden de aislamiento redactada bajo autoridad olímpica. Hefesto muestra el dispositivo original y explica por qué un procedimiento de contención fue empleado para retirar una ciudad del registro. Su admisión no le absuelve.",
+      "La Acrópolis confirma la participación de Atenea. Presenta sus informes, muestra el temor real a otra guerra divina y reconoce que calculó vidas como si fueran cifras intercambiables.",
+      "Hera ofrece la prueba de que el decreto nunca fue un acuerdo legítimo: faltó la voz mortal. El Testigo recupera una fórmula antigua incompleta y debe descubrir dónde quedó el testimonio humano perdido."
+    ],
+    "tieneSpoilers": true,
+    "seccion": "campana",
+    "imagen": null,
+    "arte": "forja",
+    "destacado": false
+  },
+  {
+    "id": "acto_5",
+    "orden": 13,
+    "titulo": "Acto V: Los nombres que Hades se negó a cerrar",
+    "resumen": "En la Necrópolis, el Testigo encuentra los nombres pendientes de Elethra y la Tablilla Blanca revela el derecho de la ciudad a decidir.",
+    "contenido": [
+      "La Necrópolis de los Nombres Pendientes expone el costo de la Tacha. Hades no hizo desaparecer las almas de Elethra: preservó sus nombres porque no podía juzgar terminada una existencia cuya historia otros habían arrancado.",
+      "Allí aparece Nera, hija de Calíone, a través de un nombre, un recuerdo contrastado y una despedida pendiente. Perséfone advierte que restaurar la verdad no puede significar obligar a los muertos a regresar. El jugador conoce también vecinos y desconocidos: Elethra fue una comunidad, no solo la tragedia privada de una antagonista.",
+      "La Tablilla Blanca responde al Testigo. No contiene una lista de personas utilizadas como combustible, sino el derecho de Elethra a decidir por sí misma, testimonio que Hestia resguardó. La criatura no es el instrumento definitivo de Hestia: es la consecuencia de que una voluntad colectiva no pudiera terminar de expresarse."
+    ],
+    "tieneSpoilers": true,
+    "seccion": "campana",
+    "imagen": null,
+    "arte": "umbral",
+    "destacado": false
+  },
+  {
+    "id": "acto_6",
+    "orden": 14,
+    "titulo": "Acto VI: El encuentro con Calíone",
+    "resumen": "En la Hora Inconclusa, Calíone explica su proyecto y pide al Testigo colaborar con la Separación Total.",
+    "contenido": [
+      "El Testigo entra en la Hora Inconclusa. Calíone describe el proyecto que inició con sus vecinos, la orden del Olimpo y los años en los que trató de obtener una confesión. Su versión concuerda con muchos registros y obliga a cuestionar el objetivo inicial del jugador.",
+      "Restaurar todos los Aspectos como estaban significaría devolver a los dioses un poder que usaron para borrar una ciudad. Calíone pide colaborar con la Separación Total, porque sin dioses no volvería a repetirse la Tacha.",
+      "El Testigo ve también la otra cara de su experimento: aldeas aisladas, vínculos desgarrados y muertes causadas por una liberación que nadie pudo aceptar o rechazar. Rechazar el antiguo monopolio no exige aprobar su solución.",
+      "El protagonista sale a buscar la cláusula perdida con una pregunta distinta: ¿se puede restaurar una relación cambiando a quién pertenece el derecho a definirla?"
+    ],
+    "tieneSpoilers": true,
+    "seccion": "campana",
+    "imagen": null,
+    "arte": "aguja",
+    "destacado": false
+  },
+  {
+    "id": "acto_7",
+    "orden": 15,
+    "titulo": "Acto VII: El juicio de los inmortales",
+    "resumen": "En el Umbral del Olimpo se juzga a Zeus, el Consejo se divide y Calíone activa la Aguja para romper la Concordancia.",
+    "contenido": [
+      "En el Umbral del Olimpo, Zeus insiste en que el pacto antiguo evitó guerras entre potencias capaces de arrasar regiones enteras. Hay parte de verdad en ese temor, pero el Testigo presenta pruebas: Elethra no pretendía eliminar a los dioses, sino reclamar un derecho reconocido por el primer pacto.",
+      "Hestia revela que protegió su último testimonio. Hera exige que la responsabilidad del soberano sea tratada con el mismo rigor que la de cualquier firmante. Hermes acepta devolver a los mortales la capacidad de decidir cómo se sostienen sus caminos. Atenea admite que la protección sin consentimiento se transforma en encierro. Hefesto participa en desmontar el mecanismo que hizo posible la Tacha.",
+      "Poseidón, Hades y otros dioses discuten los términos. No todos están de acuerdo de inmediato. El nuevo mundo no depende de que Zeus se vuelva súbitamente bondadoso.",
+      "Calíone llega y activa la Aguja para romper el núcleo de la Concordancia antes de que los dioses recuperen su autoridad. El conflicto final combina enfrentamiento y decisión: el protagonista protege a los testigos necesarios para una transformación del pacto, no una restauración ciega ni una destrucción total."
+    ],
+    "tieneSpoilers": true,
+    "seccion": "campana",
+    "imagen": "fractura_panteon",
+    "arte": null,
+    "destacado": false
+  },
+  {
+    "id": "la_concordancia_abierta",
+    "orden": 16,
+    "titulo": "La Concordancia Abierta",
+    "resumen": "Los dioses conservan su identidad pero pierden la exclusividad de sus Aspectos; Calíone responde ante las comunidades y Nera no vuelve a la vida.",
+    "contenido": [
+      "El Testigo presenta tres testimonios presentes y libres: un mundo material que todavía responde a las relaciones reparadas, una voluntad divina que renuncia a su exclusividad y personas mortales que aceptan o rechazan conscientemente esa relación. Dámaris participa como primera testigo de su comunidad, no como representante de toda la humanidad.",
+      "La Concordancia se convierte en Concordancia Abierta: los dioses conservan identidad y capacidad, pero ya no pueden imponer unilateralmente sus Aspectos a pueblos enteros. En algunos lugares los vínculos permanecen, en otros cambian y en otros se disuelven de forma gradual y segura.",
+      "Al desmantelar la Aguja, Calíone recupera un límite humano a su existencia. No muere automáticamente ni es absuelta: acepta testificar sobre Elethra y responder ante las comunidades dañadas por su campaña. Hades y Perséfone liberan a los pendientes hacia su despedida. Nera no vuelve a la vida; Elethra queda inscrita otra vez en la historia, aunque sus habitantes y edificios no reaparecen intactos.",
+      "El Testigo deja de ser un depósito excepcional de Aspectos. Puede perder su colección de dones al concluir la historia, pero no pierde su vida ni su conciencia. Acepta el nombre Aren si se conserva esa elección y puede habitar el mundo sin ser una herramienta de los dioses.",
+      "Última imagen: un camino reparado en el que no se ha erigido un nuevo trono. Un viajero pregunta si puede pasar. Nadie exige que primero pronuncie el nombre de un dios."
+    ],
+    "tieneSpoilers": true,
+    "seccion": "desenlace",
+    "imagen": null,
+    "arte": "concordancia",
+    "destacado": true
+  },
+  {
+    "id": "regiones_de_larion",
+    "orden": 17,
+    "titulo": "Regiones de Lárion",
+    "resumen": "Península ficticia inspirada en la antigua Grecia, con regiones ligadas a los Aspectos de los dioses y a los lugares afectados por la Tacha.",
+    "contenido": [
+      "Lárion es una península ficticia inspirada en paisajes y arquitectura de la antigua Grecia, sin reproducir una polis real: montañas, costa, campos de olivos, acueductos, santuarios, forjas y ruinas de épocas superpuestas. Históricamente el territorio intercambiaba agua, mercancías, juramentos, relatos y caminos, justo las funciones ahora dañadas.",
+      "Atrio de las Brasas: asentamiento central con talleres, hogares, tablillas y una fuente, donde Dámaris protege nombres mediante objetos cotidianos.",
+      "Santuario de las Calzadas: territorio de Hermes, con puentes suspendidos, miliarios, campanas sin destino y corredores que parecen continuar aunque terminan.",
+      "Acueducto de las Voces: gran barrera cuyo tramo central está incompleto, visible desde el Atrio y que conduce hacia la costa.",
+      "Costa del Retorno: territorio de Poseidón, con muelles cubiertos por mareas estancadas, antiguas cisternas y aldeas pescadoras.",
+      "Bosque de las Sendas Veladas: territorio de Artemisa, con rastros de refugiados históricos y pistas que solo se comprenden siguiéndolas con paciencia.",
+      "Observatorio de los Ecos: territorio de Apolo, construido para leer cielos y posibilidades; revela que los oráculos no vieron un destino inevitable.",
+      "Forjas de la Unión: territorio de Hefesto, con talleres bajo la colina y canales de enfriamiento donde se creó la Aguja. La tecnología y los dioses se cruzan aquí.",
+      "Necrópolis de los Nombres Pendientes: territorio de Hades, frontera de despedidas y registros incompletos, donde se hallan los nombres reales de Elethra.",
+      "Acrópolis de los Juramentos: murallas, salas de consejo y estatuas que protegen leyes desprovistas de testigos; expone la diferencia entre defensa y obediencia.",
+      "Hora Inconclusa: región oculta donde una ciudad se interrumpe a sí misma, con habitaciones sin pasado, caminos cortados y rastros de la ceremonia. No es una ciudad intacta congelada donde todos pueden revivir.",
+      "Umbral del Olimpo: recinto ceremonial donde se concentran los dioses implicados, la Concordancia y la última elección."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "mundo",
+    "imagen": null,
+    "arte": "mapa",
+    "destacado": true
+  },
+  {
+    "id": "facciones",
+    "orden": 18,
+    "titulo": "Facciones",
+    "resumen": "Custodios, Desligados, Guardadores del Hogar y Consejo Olímpico, con posturas diversas dentro de cada grupo.",
+    "contenido": [
+      "Custodios de la Concordancia: sacerdotes, escribas y funcionarios que mantienen registros y rituales. Algunos encubrieron el pasado y la mayoría ignora el crimen. Pueden ayudar, obstaculizar o cambiar de postura; no son una facción de malvados uniforme.",
+      "Los Desligados: red heterogénea de mortales que reclama terminar con la tutela divina. Calíone encabeza la facción radical que emplea la Aguja; Myrto representa a quienes defienden la autonomía pero se oponen a la destrucción indiscriminada. La palabra «desligado» no identifica automáticamente a un enemigo de combate.",
+      "Guardadores del Hogar: artesanos, mesoneros, ancianas, viajeros y familias que preservan nombres y acuerdos cotidianos sin disponer de poder militar. Son quienes dan un sujeto político real al final: la gente común.",
+      "El Consejo Olímpico: coalición frágil de dioses con desacuerdos genuinos. Zeus tiene autoridad, no unanimidad, y sus miembros nunca deben sonar como una mente única."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "mundo",
+    "imagen": null,
+    "arte": "escudo",
+    "destacado": false
+  },
+  {
+    "id": "restos_de_funcion",
+    "orden": 19,
+    "titulo": "Restos de Función",
+    "resumen": "Las rupturas violentas dejan impulsos de relación sin finalidad ni testigo, que se manifiestan como enemigos de cinco tipos.",
+    "contenido": [
+      "Las rupturas violentas dejan Restos de Función: impulsos de una relación que conservan movimiento sin finalidad ni testigo. Pueden convertirse en enemigos físicos sin implicar que el protagonista esté matando a habitantes inocentes.",
+      "Pasos Huecos: siluetas de polvo y sandalia que repiten trayectos imposibles.",
+      "Vigías sin Mandato: guardianes construidos para proteger, pero incapaces de reconocer a quién deben proteger.",
+      "Retornantes de Sal: masas de agua y residuos que intentan volver sin encontrar orilla.",
+      "Rastreadores Ciegos: figuras animalizadas que persiguen una señal desaparecida.",
+      "Trazos de la Tacha: cortes errantes de arcilla, sombra y escritura; formas más próximas a la Aguja."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "mundo",
+    "imagen": null,
+    "arte": "fragmentos",
+    "destacado": false
+  },
+  {
+    "id": "cultura_cotidiana",
+    "orden": 20,
+    "titulo": "Cultura cotidiana",
+    "resumen": "Costumbres de viajeros, alfareros y hogares que conservan la memoria de nombres y encargos.",
+    "contenido": [
+      "Los viajeros atan hilos breves a los hitos para certificar que han llegado. Antes era una superstición; ahora es una evidencia contra las rutas que se repiten.",
+      "Los alfareros graban nombres en la base de los recipientes compartidos.",
+      "En los hogares se deja una escudilla vacía por quien aún no regresa, sin necesidad de atribuirlo a un culto divino.",
+      "Los contratos importantes conservan una marca para quien pueda disentir."
+    ],
+    "tieneSpoilers": false,
+    "seccion": "mundo",
+    "imagen": null,
+    "arte": "hogar",
+    "destacado": false
+  }
+]

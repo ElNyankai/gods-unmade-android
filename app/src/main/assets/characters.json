@@ -1,0 +1,52 @@
+[
+  {
+    "id": "protagonista",
+    "nombre": "Protagonista",
+    "registro": "001",
+    "tipo": "principal",
+    "etiqueta": "PERSONAJE PRINCIPAL",
+    "descripcion": "Es un ser semihumano marcado por grietas divinas que posee la capacidad de encontrar y restaurar los Aspectos Divinos perdidos. Su misión lo lleva a recorrer ruinas y santuarios para recuperar estos fragmentos y avanzar por el mundo.",
+    "objetivo": "Recuperar el Aspecto Divino de Hermes para desbloquear el dash, acceder a nuevas rutas y continuar su recorrido.",
+    "imagen": "protagonista"
+  },
+  {
+    "id": "minotauro",
+    "nombre": "Minotauro",
+    "registro": "002",
+    "tipo": "enemigo",
+    "etiqueta": null,
+    "descripcion": "Enemigo terrestre pesado que obliga al jugador a aprender el ritmo del combate y a esquivar sus ataques.",
+    "objetivo": null,
+    "imagen": "minotauro"
+  },
+  {
+    "id": "arpia",
+    "nombre": "Arpía",
+    "registro": "003",
+    "tipo": "enemigo",
+    "etiqueta": null,
+    "descripcion": "Enemigo volador que presiona al jugador desde el aire y permite practicar ataques en distintas direcciones.",
+    "objetivo": null,
+    "imagen": "arpia"
+  },
+  {
+    "id": "medusa",
+    "nombre": "Medusa",
+    "registro": "004",
+    "tipo": "enemigo",
+    "etiqueta": null,
+    "descripcion": "Enemigo serpentino que aporta variedad visual y representa una amenaza intermedia dentro de las ruinas.",
+    "objetivo": null,
+    "imagen": "medusa"
+  },
+  {
+    "id": "custodio",
+    "nombre": "Custodio",
+    "registro": "005",
+    "tipo": "jefe",
+    "etiqueta": "JEFE DE LA DEMO",
+    "descripcion": "Guardián principal de la demo y el desafío más importante antes del cierre narrativo de esta primera región.",
+    "objetivo": null,
+    "imagen": "custodio"
+  }
+]

@@ -1,0 +1,32 @@
+package com.sixseven.godsunmade.ui
+
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
+import androidx.lifecycle.createSavedStateHandle
+import androidx.lifecycle.viewmodel.CreationExtras
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.sixseven.godsunmade.AppContainer
+import com.sixseven.godsunmade.GodsUnmadeApp
+import com.sixseven.godsunmade.ui.characters.CharacterDetailViewModel
+import com.sixseven.godsunmade.ui.characters.CharactersViewModel
+import com.sixseven.godsunmade.ui.home.HomeViewModel
+import com.sixseven.godsunmade.ui.leaderboard.LeaderboardViewModel
+import com.sixseven.godsunmade.ui.story.ChapterDetailViewModel
+import com.sixseven.godsunmade.ui.story.StoryViewModel
+
+private fun CreationExtras.container(): AppContainer =
+    (this[APPLICATION_KEY] as GodsUnmadeApp).container
+
+private fun CreationExtras.args(): SavedStateHandle = createSavedStateHandle()
+
+object AppViewModelProvider {
+    val Factory = viewModelFactory {
+        initializer { HomeViewModel() }
+        initializer { CharactersViewModel(container().charactersRepository) }
+        initializer { CharacterDetailViewModel(container().charactersRepository, args()) }
+        initializer { StoryViewModel(container().storyRepository) }
+        initializer { ChapterDetailViewModel(container().storyRepository, args()) }
+        initializer { LeaderboardViewModel(container().leaderboardRepository) }
+    }
+}
