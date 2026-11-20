@@ -20,3 +20,8 @@
 ## Ajuste puntual Historia
 - "Regiones de Lárion" (arte `mapa`: península, montañas y brújula) y "Restos de Función" (arte `fragmentos`: anillo roto, esquirlas y eco) pasan de imagen web a `ChapterArt`; ya son 13 símbolos.
 - Se eliminaron `captura_mundo` y `captura_combate` de `drawable` y de `drawableFor()` porque ningún capítulo las usa. `captura_habilidades` sigue (no se tocó).
+
+## Documentación 5.9
+- Capturas reales por adb en `docs/capturas`, mockups con Pillow en `docs/mockups`, documento en `docs/5.9_Aplicacion_Movil.(md|docx)`.
+- KDoc añadido por un subagente Haiku solo con comentarios (verificado con git diff); APK debug copiado a `release/GodsUnmade-v1.0.apk`.
+- Coil sigue declarado pero sin uso (imágenes con painterResource); se documenta así.

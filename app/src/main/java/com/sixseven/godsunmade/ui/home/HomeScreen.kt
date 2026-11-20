@@ -28,6 +28,7 @@ import com.sixseven.godsunmade.ui.components.SectionTitle
 import com.sixseven.godsunmade.ui.navigation.Routes
 import com.sixseven.godsunmade.ui.theme.*
 
+/** Pantalla de inicio: recibe el estado y llama a onNavigate con la ruta de los accesos rápidos. */
 @Composable
 fun HomeScreen(state: HomeUiState, onNavigate: (String) -> Unit, modifier: Modifier = Modifier) {
     Column(modifier.fillMaxSize()) {

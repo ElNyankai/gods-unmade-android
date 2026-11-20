@@ -13,6 +13,7 @@ import com.sixseven.godsunmade.data.model.Character
 import com.sixseven.godsunmade.ui.components.*
 import com.sixseven.godsunmade.ui.theme.*
 
+/** Pantalla de personajes: protagonista destacado y lista de enemigos; onCharacterClick recibe el id. */
 @Composable
 fun CharactersScreen(
     state: CharactersUiState,

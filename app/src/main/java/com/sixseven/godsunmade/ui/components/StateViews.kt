@@ -10,6 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.sixseven.godsunmade.ui.theme.*
 
+/** Indicador de carga centrado en color bronce. */
 @Composable
 fun LoadingView(modifier: Modifier = Modifier) {
     Box(modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -17,6 +18,7 @@ fun LoadingView(modifier: Modifier = Modifier) {
     }
 }
 
+/** Muestra un mensaje de error con el botón REINTENTAR, que llama a onRetry. */
 @Composable
 fun ErrorView(message: String, onRetry: () -> Unit, modifier: Modifier = Modifier) {
     Column(
@@ -35,6 +37,7 @@ fun ErrorView(message: String, onRetry: () -> Unit, modifier: Modifier = Modifie
     }
 }
 
+/** Mensaje centrado para cuando una lista no tiene elementos. */
 @Composable
 fun EmptyView(message: String, modifier: Modifier = Modifier) {
     Column(

@@ -2,6 +2,7 @@ package com.sixseven.godsunmade.data.model
 
 import kotlinx.serialization.Serializable
 
+/** Personaje del universo (protagonista, enemigo o jefe), cargado desde characters.json. */
 @Serializable
 data class Character(
     val id: String,
@@ -17,6 +18,7 @@ data class Character(
     val esJefe: Boolean get() = tipo == "jefe"
 }
 
+/** Secciones de la historia, con la clave usada en story.json, su etiqueta y descripción. */
 enum class StorySection(val key: String, val label: String, val descripcion: String) {
     FUNDAMENTOS("fundamentos", "Fundamentos", "Las leyes y la herida original del universo"),
     CAMPANA("campana", "Campaña", "El recorrido del Testigo, del prólogo al juicio"),
@@ -28,6 +30,7 @@ enum class StorySection(val key: String, val label: String, val descripcion: Str
     }
 }
 
+/** Capítulo de la historia cargado desde story.json; `section` resuelve el campo `seccion`. */
 @Serializable
 data class StoryChapter(
     val id: String,
@@ -44,6 +47,7 @@ data class StoryChapter(
     val section: StorySection get() = StorySection.fromKey(seccion)
 }
 
+/** Entrada del ranking: posición, nombre del jugador y puntaje. */
 @Serializable
 data class Player(
     val posicion: Int,

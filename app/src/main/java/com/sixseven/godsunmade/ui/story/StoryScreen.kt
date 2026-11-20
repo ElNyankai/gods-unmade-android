@@ -31,6 +31,7 @@ import com.sixseven.godsunmade.R
 import com.sixseven.godsunmade.ui.components.*
 import com.sixseven.godsunmade.ui.theme.*
 
+/** Pantalla de historia: héroe, capítulos destacados y secciones; onChapterClick recibe el id del capítulo. */
 @Composable
 fun StoryScreen(
     state: StoryUiState,
@@ -86,6 +87,7 @@ private fun StoryHero() {
     }
 }
 
+/** Detalle de capítulo: muestra la advertencia de spoilers si hace falta y luego el contenido. */
 @Composable
 fun ChapterDetailScreen(
     state: ChapterUiState,

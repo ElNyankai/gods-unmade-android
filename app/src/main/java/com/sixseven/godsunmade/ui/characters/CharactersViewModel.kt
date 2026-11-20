@@ -9,24 +9,28 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+/** Estados de la lista de personajes: Loading, Success con protagonista y enemigos, o Error. */
 sealed interface CharactersUiState {
     data object Loading : CharactersUiState
     data class Success(val principal: Character?, val enemigos: List<Character>) : CharactersUiState
     data class Error(val mensaje: String) : CharactersUiState
 }
 
+/** Estados del detalle de un personaje: Loading, Success con el personaje, o Error. */
 sealed interface CharacterDetailUiState {
     data object Loading : CharacterDetailUiState
     data class Success(val personaje: Character) : CharacterDetailUiState
     data class Error(val mensaje: String) : CharacterDetailUiState
 }
 
+/** ViewModel de la lista de personajes: separa el protagonista de los enemigos. */
 class CharactersViewModel(private val repository: CharactersRepository) : ViewModel() {
     private val _uiState = MutableStateFlow<CharactersUiState>(CharactersUiState.Loading)
     val uiState: StateFlow<CharactersUiState> = _uiState
 
     init { cargar() }
 
+    // Pasa a Loading y luego a Success o Error; runCatching captura los fallos del repositorio.
     fun cargar() {
         _uiState.value = CharactersUiState.Loading
         viewModelScope.launch {
@@ -38,10 +42,12 @@ class CharactersViewModel(private val repository: CharactersRepository) : ViewMo
     }
 }
 
+/** ViewModel del detalle de personaje: carga el personaje indicado por el argumento de ruta. */
 class CharacterDetailViewModel(
     private val repository: CharactersRepository,
     savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
+    // Id de la ruta personaje/{id}, leído del SavedStateHandle.
     private val id: String = checkNotNull(savedStateHandle["id"])
     private val _uiState = MutableStateFlow<CharacterDetailUiState>(CharacterDetailUiState.Loading)
     val uiState: StateFlow<CharacterDetailUiState> = _uiState

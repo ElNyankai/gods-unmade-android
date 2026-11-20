@@ -53,8 +53,10 @@ fun AppTopBar(title: String, modifier: Modifier = Modifier, onBack: (() -> Unit)
     }
 }
 
+/** Destino de la barra inferior: ruta, etiqueta e icono. */
 data class BottomDestination(val route: String, val label: String, val icon: ImageVector)
 
+/** Barra inferior: resalta currentRoute y llama a onNavigate con la ruta elegida. */
 @Composable
 fun AppBottomBar(
     destinations: List<BottomDestination>,
@@ -81,6 +83,7 @@ fun AppBottomBar(
     }
 }
 
+/** Título de sección con separador de bronce; subtitle es opcional. */
 @Composable
 fun SectionTitle(text: String, modifier: Modifier = Modifier, subtitle: String? = null) {
     Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {

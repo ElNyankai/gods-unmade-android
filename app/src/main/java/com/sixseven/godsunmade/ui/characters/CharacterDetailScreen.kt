@@ -13,6 +13,7 @@ import com.sixseven.godsunmade.data.model.Character
 import com.sixseven.godsunmade.ui.components.*
 import com.sixseven.godsunmade.ui.theme.*
 
+/** Detalle de un personaje: imagen, registro, descripción y objetivo; onBack y onRetry son callbacks. */
 @Composable
 fun CharacterDetailScreen(
     state: CharacterDetailUiState,

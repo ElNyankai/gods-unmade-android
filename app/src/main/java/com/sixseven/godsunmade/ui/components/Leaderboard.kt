@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.sixseven.godsunmade.data.model.Player
 import com.sixseven.godsunmade.ui.theme.*
 
+/** Formatea el puntaje con punto como separador de miles (98000 se muestra 98.000). */
 fun Int.formatoPuntaje(): String = "%,d".format(this).replace(',', '.')
 
 private val Oro = Color(0xFFE2C99A)
@@ -26,6 +27,7 @@ private val BronceMedalla = Color(0xFFB07A45)
 
 private fun medalla(pos: Int) = when (pos) { 1 -> Oro; 2 -> Plata; else -> BronceMedalla }
 
+/** Columna del podio: avatar con inicial, nombre, puntaje y bloque con la posición. */
 @Composable
 fun PodiumItem(player: Player, modifier: Modifier = Modifier) {
     val alto = when (player.posicion) { 1 -> 120.dp; 2 -> 96.dp; else -> 80.dp }
@@ -48,6 +50,7 @@ fun PodiumItem(player: Player, modifier: Modifier = Modifier) {
     }
 }
 
+/** Fila de la clasificación con posición, nombre y puntaje. */
 @Composable
 fun LeaderboardRow(player: Player, modifier: Modifier = Modifier) {
     Card(

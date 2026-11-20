@@ -12,6 +12,7 @@ import com.sixseven.godsunmade.data.model.Player
 import com.sixseven.godsunmade.ui.components.*
 import com.sixseven.godsunmade.ui.theme.GodsUnmadeTheme
 
+/** Pantalla del ranking: muestra podio y clasificación según state; onRetry reintenta la carga. */
 @Composable
 fun LeaderboardScreen(state: LeaderboardUiState, onRetry: () -> Unit, modifier: Modifier = Modifier) {
     Column(modifier.fillMaxSize()) {

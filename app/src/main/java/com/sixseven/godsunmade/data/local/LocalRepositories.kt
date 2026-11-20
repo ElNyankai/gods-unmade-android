@@ -23,6 +23,7 @@ class AssetJsonSource<T>(
     private val mutex = Mutex()
     private var cache: T? = null
 
+    // El mutex evita leer el asset dos veces en llamadas concurrentes; después usa la cache.
     suspend fun get(): T = mutex.withLock {
         cache ?: withContext(Dispatchers.IO) {
             context.assets.open(fileName).bufferedReader(Charsets.UTF_8).use { decode(it.readText()) }
@@ -30,23 +31,27 @@ class AssetJsonSource<T>(
     }
 }
 
+// ignoreUnknownKeys permite que el JSON tenga campos extra sin romper la carga.
 private val json = Json { ignoreUnknownKeys = true }
 
 private inline fun <reified T> decodeList(text: String): List<T> =
     json.decodeFromString(json.serializersModule.serializer<List<T>>(), text)
 
+/** Personajes leídos de assets/characters.json. */
 class LocalCharactersRepository(context: Context) : CharactersRepository {
     private val source = AssetJsonSource(context, "characters.json") { decodeList<Character>(it) }
     override suspend fun getCharacters() = source.get()
     override suspend fun getCharacter(id: String) = source.get().firstOrNull { it.id == id }
 }
 
+/** Capítulos leídos de assets/story.json; se devuelven ordenados por `orden`. */
 class LocalStoryRepository(context: Context) : StoryRepository {
     private val source = AssetJsonSource(context, "story.json") { decodeList<StoryChapter>(it) }
     override suspend fun getChapters() = source.get().sortedBy { it.orden }
     override suspend fun getChapter(id: String) = source.get().firstOrNull { it.id == id }
 }
 
+/** Ranking leído de assets/leaderboard.json; se devuelve ordenado por posición. */
 class LocalLeaderboardRepository(context: Context) : LeaderboardRepository {
     private val source = AssetJsonSource(context, "leaderboard.json") { decodeList<Player>(it) }
     override suspend fun getPlayers() = source.get().sortedBy { it.posicion }

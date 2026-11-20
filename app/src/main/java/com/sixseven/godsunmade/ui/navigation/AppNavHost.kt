@@ -34,6 +34,7 @@ import com.sixseven.godsunmade.ui.story.ChapterDetailViewModel
 import com.sixseven.godsunmade.ui.story.StoryScreen
 import com.sixseven.godsunmade.ui.story.StoryViewModel
 
+/** Rutas de navegación: destinos de nivel superior y rutas de detalle con argumento {id}. */
 object Routes {
     const val HOME = "inicio"
     const val CHARACTERS = "personajes"
@@ -52,12 +53,22 @@ private val bottomDestinations = listOf(
     BottomDestination(Routes.LEADERBOARD, "Top", Icons.Default.Star),
 )
 
+// Al cambiar de destino de nivel superior: popUpTo guarda su estado, restoreState lo recupera y launchSingleTop evita duplicarlo.
 private fun NavHostController.navigateTopLevel(route: String) = navigate(route) {
     popUpTo(graph.findStartDestination().id) { saveState = true }
     launchSingleTop = true
     restoreState = true
 }
 
+/**
+ * Grafo de navegación de la app con Navigation Compose.
+ *
+ * - Rutas definidas en [Routes]; cada destino crea su ViewModel con AppViewModelProvider.Factory.
+ * - Bottom bar con 4 destinos de nivel superior (Inicio, Personajes, Historia, Top);
+ *   navigateTopLevel guarda y restaura el estado de cada uno.
+ * - Rutas de detalle: personaje/{id} y capitulo/{id}.
+ * - Para cambiar a API/BD solo se modifica AppContainer, no la navegación.
+ */
 @Composable
 fun AppNavHost(navController: NavHostController = rememberNavController()) {
     val entry by navController.currentBackStackEntryAsState()

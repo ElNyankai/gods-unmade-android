@@ -59,6 +59,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
     val main = Bronce.copy(alpha = 0.9f)
     val soft = BronceClaro.copy(alpha = 0.5f)
     when (tipo) {
+        // Camino: dos líneas que convergen hacia el horizonte, con huellas en el centro.
         "camino" -> {
             drawLine(main, Offset(cx - u * 1.6f, h), Offset(cx - u * 0.2f, cy - u * 0.8f), line.width, StrokeCap.Round)
             drawLine(main, Offset(cx + u * 1.6f, h), Offset(cx + u * 0.2f, cy - u * 0.8f), line.width, StrokeCap.Round)
@@ -67,6 +68,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
                 drawLine(soft, Offset(cx, cy - u * 0.7f + t * (h - cy + u * 0.7f)), Offset(cx, cy - u * 0.5f + t * (h - cy + u * 0.7f)), line.width, StrokeCap.Round)
             }
         }
+        // Mar: tres olas sinusoidales, la central resaltada.
         "mar" -> for (k in 0..2) {
             val p = Path()
             val yy = cy - u * 0.5f + k * u * 0.55f
@@ -78,6 +80,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             }
             drawPath(p, if (k == 1) main else soft, style = line)
         }
+        // Flecha: asta diagonal con punta triangular y plumas en el extremo.
         "flecha" -> {
             val a = Offset(cx - u * 1.2f, cy + u * 0.9f)
             val b = Offset(cx + u * 1.2f, cy - u * 0.9f)
@@ -90,6 +93,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             drawLine(soft, Offset(a.x + u * 0.25f, a.y - u * 0.17f), Offset(a.x - u * 0.05f, a.y - u * 0.37f), line.width, StrokeCap.Round)
             drawCircle(soft, u * 0.45f, Offset(cx + u * 0.9f, cy + u * 0.7f), style = thin)
         }
+        // Forja: crisol con chispas que suben desde el centro.
         "forja" -> {
             val p = Path().apply {
                 moveTo(cx - u * 1.2f, cy - u * 0.1f); lineTo(cx + u * 1.1f, cy - u * 0.1f)
@@ -102,6 +106,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
                 drawLine(soft, Offset(cx, cy - u * 0.2f), Offset(cx + ang * u * 0.9f, cy - u * (0.7f + (i % 2) * 0.5f)), thin.width, StrokeCap.Round)
             }
         }
+        // Umbral: marco de puerta con arco interior y línea de suelo.
         "umbral" -> {
             drawRect(main, Offset(cx - u, cy - u * 0.9f), Size(u * 2, u * 1.9f), style = line)
             drawRect(soft, Offset(cx - u * 1.2f, cy - u * 1.1f), Size(u * 2.4f, u * 0.22f), style = thin)
@@ -112,6 +117,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             drawPath(arch, soft, style = thin)
             drawLine(soft, Offset(cx, cy + u), Offset(cx, h), thin.width)
         }
+        // Hogar: tres llamas sobre una base horizontal.
         "hogar" -> {
             for (k in 0..2) {
                 val s = if (k == 1) 1.3f else 0.9f
@@ -125,12 +131,14 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             }
             drawLine(main, Offset(cx - u * 1.5f, cy + u * 0.95f), Offset(cx + u * 1.5f, cy + u * 0.95f), line.width, StrokeCap.Round)
         }
+        // Tacha: círculo con trazo cruzado, símbolo de rechazo.
         "tacha" -> {
             drawCircle(soft, u, Offset(cx, cy), style = thin)
             drawLine(main, Offset(cx - u * 1.3f, cy + u * 1.1f), Offset(cx + u * 1.3f, cy - u * 1.1f), line.width * 1.3f, StrokeCap.Round)
             drawLine(soft, Offset(cx - u * 0.9f, cy - u * 0.3f), Offset(cx + u * 0.3f, cy - u * 0.3f), thin.width, StrokeCap.Round)
             drawLine(soft, Offset(cx - u * 0.5f, cy + u * 0.4f), Offset(cx + u * 0.8f, cy + u * 0.4f), thin.width, StrokeCap.Round)
         }
+        // Balanza: fiel con dos platillos colgando y base.
         "balanza" -> {
             drawLine(main, Offset(cx, cy - u), Offset(cx, cy + u), line.width, StrokeCap.Round)
             drawLine(main, Offset(cx - u * 1.2f, cy - u * 0.6f), Offset(cx + u * 1.2f, cy - u * 0.6f), line.width, StrokeCap.Round)
@@ -142,6 +150,7 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             }
             drawLine(main, Offset(cx - u * 0.5f, cy + u), Offset(cx + u * 0.5f, cy + u), line.width, StrokeCap.Round)
         }
+        // Aguja: hilo que sale del ojo de una aguja en curva.
         "aguja" -> {
             val a = Offset(cx - u * 1.3f, cy + u * 0.9f)
             val b = Offset(cx + u * 1.3f, cy - u * 0.9f)
@@ -153,11 +162,13 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
             }
             drawPath(thread, soft, style = thin)
         }
+        // Concordancia: tres círculos superpuestos en triángulo.
         "concordancia" -> {
             drawCircle(main, u * 0.8f, Offset(cx, cy - u * 0.45f), style = line)
             drawCircle(soft, u * 0.8f, Offset(cx - u * 0.7f, cy + u * 0.4f), style = line)
             drawCircle(soft, u * 0.8f, Offset(cx + u * 0.7f, cy + u * 0.4f), style = line)
         }
+        // Escudo: silueta con eje vertical y franja horizontal.
         "escudo" -> {
             val p = Path().apply {
                 moveTo(cx - u * 0.9f, cy - u * 0.9f); lineTo(cx + u * 0.9f, cy - u * 0.9f)

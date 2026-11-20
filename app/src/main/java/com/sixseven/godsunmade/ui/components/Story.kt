@@ -23,6 +23,7 @@ import com.sixseven.godsunmade.data.model.StoryChapter
 import com.sixseven.godsunmade.data.model.StorySection
 import com.sixseven.godsunmade.ui.theme.*
 
+/** Etiqueta roja "SPOILERS" que indica que el capítulo revela giros importantes. */
 @Composable
 fun SpoilerBadge(modifier: Modifier = Modifier) {
     Text(
@@ -33,6 +34,7 @@ fun SpoilerBadge(modifier: Modifier = Modifier) {
     )
 }
 
+/** Advertencia antes de leer un capítulo con spoilers; onContinue acepta y onBack vuelve atrás. */
 @Composable
 fun SpoilerWarning(onContinue: () -> Unit, onBack: () -> Unit, modifier: Modifier = Modifier) {
     Column(

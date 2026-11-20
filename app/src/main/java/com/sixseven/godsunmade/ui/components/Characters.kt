@@ -41,11 +41,13 @@ fun CharacterAvatar(character: Character, modifier: Modifier = Modifier, height:
     }
 }
 
+/** Etiqueta "REGISTRO" con el código del personaje. */
 @Composable
 fun RegistroLabel(registro: String, modifier: Modifier = Modifier) {
     Text("REGISTRO $registro", modifier, style = MaterialTheme.typography.labelMedium, color = Bronce)
 }
 
+/** Etiqueta en mayúsculas con fondo arcilla para la etiqueta de un personaje. */
 @Composable
 fun TagLabel(text: String, modifier: Modifier = Modifier) {
     Text(
@@ -56,6 +58,7 @@ fun TagLabel(text: String, modifier: Modifier = Modifier) {
     )
 }
 
+/** Bloque "Objetivo principal" con el texto del objetivo del personaje. */
 @Composable
 fun ObjectiveBlock(text: String, modifier: Modifier = Modifier) {
     Row(modifier.fillMaxWidth().background(Fondo.copy(alpha = 0.6f)).height(IntrinsicSize.Min)) {

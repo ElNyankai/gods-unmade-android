@@ -18,8 +18,10 @@ import com.sixseven.godsunmade.ui.story.StoryViewModel
 private fun CreationExtras.container(): AppContainer =
     (this[APPLICATION_KEY] as GodsUnmadeApp).container
 
+// Los argumentos de ruta (id) llegan por SavedStateHandle a los ViewModels de detalle.
 private fun CreationExtras.args(): SavedStateHandle = createSavedStateHandle()
 
+/** Factory que crea los ViewModels de cada ruta con las dependencias del AppContainer. */
 object AppViewModelProvider {
     val Factory = viewModelFactory {
         initializer { HomeViewModel() }
