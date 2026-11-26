@@ -74,14 +74,14 @@ fun StoryScreen(
 private fun StoryHero() {
     Box(Modifier.fillMaxWidth().height(240.dp)) {
         Image(painterResource(R.drawable.historia), null, Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
-        Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Fondo.copy(alpha = 0.3f), Fondo))))
+        Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Sombra.copy(alpha = 0.3f), Sombra))))
         Column(Modifier.align(Alignment.BottomStart).padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Text("LOS RELATOS DEL MUNDO", style = MaterialTheme.typography.labelMedium, color = Bronce)
-            Text("HISTORIA", style = MaterialTheme.typography.displayMedium, color = Lino)
+            Text("LOS RELATOS DEL MUNDO", style = MaterialTheme.typography.labelMedium, color = Oro)
+            Text("HISTORIA", style = MaterialTheme.typography.displayMedium.copy(brush = GradienteTitulo))
             OrnamentDivider(Modifier.width(120.dp))
             Text(
                 "Los dioses pierden fragmentos de su identidad. Explora qué se oculta detrás de la fractura.",
-                style = MaterialTheme.typography.bodyMedium, color = LinoSuave,
+                style = MaterialTheme.typography.bodyMedium, color = Apagado,
             )
         }
     }
@@ -122,29 +122,29 @@ private fun ChapterBody(state: ChapterUiState.Success) {
             },
         ) {
             ChapterVisual(c.imagen, c.arte, Modifier.fillMaxSize())
-            Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color.Transparent, Fondo))))
+            Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color.Transparent, Sombra))))
             Column(Modifier.align(Alignment.BottomStart).padding(20.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                Text("${c.section.label.uppercase()} · CAP. %02d".format(c.orden), style = MaterialTheme.typography.labelMedium, color = Bronce)
-                Text(c.titulo, style = MaterialTheme.typography.headlineMedium, color = Lino)
+                Text("${c.section.label.uppercase()} · CAP. %02d".format(c.orden), style = MaterialTheme.typography.labelMedium, color = Oro)
+                Text(c.titulo, style = MaterialTheme.typography.headlineMedium, color = Marfil)
                 if (c.tieneSpoilers) SpoilerBadge()
             }
         }
         Column(Modifier.padding(horizontal = 20.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(18.dp)) {
             // el resumen va en una barra roja a la izquierda
             Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min)) {
-                Box(Modifier.width(4.dp).fillMaxHeight().background(Arcilla))
+                Box(Modifier.width(4.dp).fillMaxHeight().background(Peligro))
                 Text(
                     c.resumen,
                     Modifier.padding(start = 14.dp),
                     style = MaterialTheme.typography.titleSmall.copy(lineHeight = 24.sp),
-                    color = BronceClaro,
+                    color = Oro,
                 )
             }
             OrnamentDivider()
             // el primer parrafo lleva letra grande y cada dos un separador
             c.contenido.forEachIndexed { i, parrafo ->
                 if (i == 0) DropCapParagraph(parrafo)
-                else Text(parrafo, style = MaterialTheme.typography.bodyLarge, color = Lino)
+                else Text(parrafo, style = MaterialTheme.typography.bodyLarge, color = Marfil)
                 if (i % 2 == 1 && i < c.contenido.lastIndex) OrnamentDivider(Modifier.padding(vertical = 4.dp))
             }
             OrnamentDivider(Modifier.padding(top = 8.dp, bottom = 24.dp))
@@ -158,16 +158,16 @@ private fun DropCapParagraph(text: String) {
     if (text.isEmpty()) return
     Text(
         buildAnnotatedString {
-            withStyle(SpanStyle(fontSize = 44.sp, fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Black, color = Bronce)) {
+            withStyle(SpanStyle(fontSize = 44.sp, fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Black, color = Oro)) {
                 append(text.first())
             }
             append(text.drop(1))
         },
         style = MaterialTheme.typography.bodyLarge,
-        color = Lino,
+        color = Marfil,
     )
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFF171C2A)
+@Preview(showBackground = true, backgroundColor = 0xFF100C12)
 @Composable
 private fun StoryPreview() = GodsUnmadeTheme { StoryScreen(StoryUiState.Success(emptyList(), emptyList()), {}, {}) }

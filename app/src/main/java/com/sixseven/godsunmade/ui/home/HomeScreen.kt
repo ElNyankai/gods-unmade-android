@@ -47,11 +47,11 @@ private fun HomeContent(state: HomeUiState.Success, onNavigate: (String) -> Unit
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(20.dp)) {
         Box(Modifier.fillMaxWidth().height(260.dp)) {
             Image(painterResource(R.drawable.portada), null, Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
-            Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color.Transparent, Fondo))))
+            Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color.Transparent, Sombra))))
             Column(Modifier.align(Alignment.BottomStart).padding(16.dp)) {
-                Text("SIXSEVENGAMES PRESENTA", style = MaterialTheme.typography.labelSmall, color = Bronce)
-                Text("GODS", style = MaterialTheme.typography.displayMedium, color = Lino)
-                Text("U N M A D E", style = MaterialTheme.typography.titleMedium, color = Bronce)
+                Text("SIXSEVENGAMES PRESENTA", style = MaterialTheme.typography.labelSmall, color = Oro)
+                Text("GODS", style = MaterialTheme.typography.displayMedium.copy(brush = GradienteTitulo))
+                Text("U N M A D E", style = MaterialTheme.typography.titleMedium, color = Oro)
             }
         }
         Text(
@@ -59,10 +59,10 @@ private fun HomeContent(state: HomeUiState.Success, onNavigate: (String) -> Unit
             Modifier.padding(horizontal = 24.dp).fillMaxWidth(),
             style = MaterialTheme.typography.titleMedium,
             fontStyle = FontStyle.Italic,
-            color = BronceClaro,
+            color = Oro,
             textAlign = TextAlign.Center,
         )
-        Text(state.logline, Modifier.padding(horizontal = 16.dp), style = MaterialTheme.typography.bodyLarge, color = LinoSuave)
+        Text(state.logline, Modifier.padding(horizontal = 16.dp), style = MaterialTheme.typography.bodyLarge, color = Apagado)
         SectionTitle("Explora", Modifier.padding(horizontal = 16.dp))
         Column(Modifier.padding(horizontal = 16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             QuickAccess("Personajes", "Protagonista, enemigos y guardianes", "☉") { onNavigate(Routes.CHARACTERS) }
@@ -73,7 +73,7 @@ private fun HomeContent(state: HomeUiState.Success, onNavigate: (String) -> Unit
             "◇ ${state.avisoLore}",
             Modifier.padding(horizontal = 16.dp, vertical = 8.dp).fillMaxWidth(),
             style = MaterialTheme.typography.labelMedium,
-            color = Piedra,
+            color = Apagado,
             textAlign = TextAlign.Center,
         )
     }
@@ -86,21 +86,21 @@ private fun QuickAccess(title: String, subtitle: String, glyph: String, onClick:
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(4.dp),
-        colors = CardDefaults.cardColors(containerColor = Superficie),
-        border = BorderStroke(1.dp, Bronce.copy(alpha = 0.6f)),
+        colors = CardDefaults.cardColors(containerColor = Ciruela),
+        border = BorderStroke(1.dp, Cobre.copy(alpha = 0.6f)),
     ) {
         Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-            Text(glyph, style = MaterialTheme.typography.headlineMedium, color = Bronce)
+            Text(glyph, style = MaterialTheme.typography.headlineMedium, color = Oro)
             Column(Modifier.weight(1f)) {
-                Text(title.uppercase(), style = MaterialTheme.typography.titleMedium, color = Lino)
-                Text(subtitle, style = MaterialTheme.typography.bodySmall, color = LinoSuave)
+                Text(title.uppercase(), style = MaterialTheme.typography.titleMedium, color = Marfil)
+                Text(subtitle, style = MaterialTheme.typography.bodySmall, color = Apagado)
             }
-            Text("→", style = MaterialTheme.typography.titleLarge, color = Bronce)
+            Text("→", style = MaterialTheme.typography.titleLarge, color = Oro)
         }
     }
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFF171C2A)
+@Preview(showBackground = true, backgroundColor = 0xFF100C12)
 @Composable
 private fun HomePreview() = GodsUnmadeTheme {
     HomeScreen(HomeUiState.Success("Ningún dios debería poder borrar a quienes se atreven a decirle que no", "Los dioses pierden fragmentos…", "Lore v1.0, contenido propuesto"), {})

@@ -5,6 +5,6 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
     <!-- Glifo ✦ del logo de la web -->
-    <path android:fillColor="#C49A4A"
+    <path android:fillColor="#FFDA89"
         android:pathData="M54,26 C56,44 64,52 82,54 C64,56 56,64 54,82 C52,64 44,56 26,54 C44,52 52,44 54,26 Z" />
 </vector>

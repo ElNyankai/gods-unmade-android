@@ -27,21 +27,21 @@ fun ChapterArt(tipo: String?, modifier: Modifier = Modifier) {
         val w = size.width
         val h = size.height
         // fondo con degradado oscuro y un resplandor al centro
-        drawRect(Brush.verticalGradient(listOf(Sombra, ArcillaOscura, Superficie)))
+        drawRect(Brush.verticalGradient(listOf(Ciruela, MarronSombra, Ciruela)))
         drawRect(
-            Brush.radialGradient(listOf(Bronce.copy(alpha = 0.28f), Color.Transparent), Offset(w / 2, h / 2), min(w, h) * 0.9f),
+            Brush.radialGradient(listOf(Halo.copy(alpha = 0.25f), Color.Transparent), Offset(w / 2, h / 2), min(w, h) * 0.9f),
         )
         // lineas horizontales que imitan bloques de piedra
         var y = 0f
         while (y < h) {
-            drawLine(Bronce.copy(alpha = 0.05f), Offset(0f, y), Offset(w, y), 1f)
+            drawLine(Cobre.copy(alpha = 0.05f), Offset(0f, y), Offset(w, y), 1f)
             y += 22.dp.toPx()
         }
         // puntitos de brasas repartidos por el dibujo
         for (i in 0 until 14) {
             val px = (i * 977 % 100) / 100f * w
             val py = (i * 389 % 100) / 100f * h
-            drawCircle(BronceClaro.copy(alpha = 0.18f), 1.5.dp.toPx() + (i % 3), Offset(px, py))
+            drawCircle(Mota.copy(alpha = 0.2f), 1.5.dp.toPx() + (i % 3), Offset(px, py))
         }
         symbol(tipo, w, h)
     }
@@ -54,8 +54,8 @@ private fun DrawScope.symbol(tipo: String?, w: Float, h: Float) {
     val cy = h * 0.36f
     val line = Stroke(width = (u * 0.07f).coerceAtLeast(2f), cap = StrokeCap.Round)
     val thin = Stroke(width = (u * 0.035f).coerceAtLeast(1f), cap = StrokeCap.Round)
-    val main = Bronce.copy(alpha = 0.9f)
-    val soft = BronceClaro.copy(alpha = 0.5f)
+    val main = Oro.copy(alpha = 0.9f)
+    val soft = Cobre
     when (tipo) {
         // dos lineas que llegan al horizonte con huellas
         "camino" -> {

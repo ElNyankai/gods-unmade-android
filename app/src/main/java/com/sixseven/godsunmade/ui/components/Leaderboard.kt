@@ -21,12 +21,8 @@ import com.sixseven.godsunmade.ui.theme.*
 // pone punto cada tres cifras, 98000 se ve como 98.000
 fun Int.formatoPuntaje(): String = "%,d".format(this).replace(',', '.')
 
-private val Oro = Color(0xFFE2C99A)
-private val Plata = Color(0xFFC7CBD1)
-private val BronceMedalla = Color(0xFFB07A45)
-
 // el color de la medalla segun el puesto
-private fun medalla(pos: Int) = when (pos) { 1 -> Oro; 2 -> Plata; else -> BronceMedalla }
+private fun medalla(pos: Int) = when (pos) { 1 -> Oro; 2 -> Marmol; else -> Cobre }
 
 // un puesto del podio: avatar, nombre, puntaje y el bloque con el numero
 @Composable
@@ -36,15 +32,15 @@ fun PodiumItem(player: Player, modifier: Modifier = Modifier) {
     Column(modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         if (player.posicion == 1) Text("♛", style = MaterialTheme.typography.headlineSmall, color = Oro)
         Box(
-            Modifier.size(52.dp).clip(CircleShape).background(SuperficieAlta).border(2.dp, color, CircleShape),
+            Modifier.size(52.dp).clip(CircleShape).background(MarronSombra).border(2.dp, color, CircleShape),
             contentAlignment = Alignment.Center,
         ) { Text(player.jugador.take(1).uppercase(), style = MaterialTheme.typography.titleLarge, color = color) }
         Spacer(Modifier.height(6.dp))
-        Text(player.jugador, style = MaterialTheme.typography.labelLarge, color = Lino, maxLines = 1, overflow = TextOverflow.Ellipsis)
-        Text(player.puntaje.formatoPuntaje(), style = MaterialTheme.typography.bodySmall, color = Bronce)
+        Text(player.jugador, style = MaterialTheme.typography.labelLarge, color = Marfil, maxLines = 1, overflow = TextOverflow.Ellipsis)
+        Text(player.puntaje.formatoPuntaje(), style = MaterialTheme.typography.bodySmall, color = Oro)
         Spacer(Modifier.height(6.dp))
         Box(
-            Modifier.fillMaxWidth().height(alto).background(ArcillaOscura, RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp))
+            Modifier.fillMaxWidth().height(alto).background(OxidoOscuro, RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp))
                 .border(1.dp, color, RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp)),
             contentAlignment = Alignment.TopCenter,
         ) { Text("${player.posicion}", style = MaterialTheme.typography.displayMedium, color = color) }
@@ -57,13 +53,13 @@ fun LeaderboardRow(player: Player, modifier: Modifier = Modifier) {
     Card(
         modifier.fillMaxWidth(),
         shape = RoundedCornerShape(4.dp),
-        colors = CardDefaults.cardColors(containerColor = Superficie),
-        border = BorderStroke(1.dp, Bronce.copy(alpha = 0.35f)),
+        colors = CardDefaults.cardColors(containerColor = Ciruela),
+        border = BorderStroke(1.dp, Cobre.copy(alpha = 0.35f)),
     ) {
         Row(Modifier.padding(horizontal = 14.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text("#${player.posicion}", style = MaterialTheme.typography.titleSmall, color = Bronce, modifier = Modifier.width(48.dp))
-            Text(player.jugador, style = MaterialTheme.typography.titleSmall, color = Lino, modifier = Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis)
-            Text(player.puntaje.formatoPuntaje(), style = MaterialTheme.typography.titleSmall, color = BronceClaro)
+            Text("#${player.posicion}", style = MaterialTheme.typography.titleSmall, color = Oro, modifier = Modifier.width(48.dp))
+            Text(player.jugador, style = MaterialTheme.typography.titleSmall, color = Marfil, modifier = Modifier.weight(1f), maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(player.puntaje.formatoPuntaje(), style = MaterialTheme.typography.titleSmall, color = Oro)
         }
     }
 }

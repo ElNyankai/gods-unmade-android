@@ -14,7 +14,7 @@ import com.sixseven.godsunmade.ui.theme.*
 @Composable
 fun LoadingView(modifier: Modifier = Modifier) {
     Box(modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        CircularProgressIndicator(color = Bronce)
+        CircularProgressIndicator(color = Oro)
     }
 }
 
@@ -26,12 +26,12 @@ fun ErrorView(message: String, onRetry: () -> Unit, modifier: Modifier = Modifie
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Text("✦", style = MaterialTheme.typography.displayMedium, color = Arcilla)
+        Text("✦", style = MaterialTheme.typography.displayMedium, color = Peligro)
         Spacer(Modifier.height(8.dp))
-        Text("Algo salió mal", style = MaterialTheme.typography.titleMedium, color = Lino)
-        Text(message, style = MaterialTheme.typography.bodyMedium, color = Piedra, textAlign = TextAlign.Center)
+        Text("Algo salió mal", style = MaterialTheme.typography.titleMedium, color = Marfil)
+        Text(message, style = MaterialTheme.typography.bodyMedium, color = Apagado, textAlign = TextAlign.Center)
         Spacer(Modifier.height(16.dp))
-        Button(onClick = onRetry, colors = ButtonDefaults.buttonColors(containerColor = Arcilla, contentColor = Lino)) {
+        Button(onClick = onRetry, colors = ButtonDefaults.buttonColors(containerColor = Peligro, contentColor = Sombra)) {
             Text("REINTENTAR", style = MaterialTheme.typography.labelLarge)
         }
     }
@@ -45,20 +45,20 @@ fun EmptyView(message: String, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Text("◇", style = MaterialTheme.typography.displayMedium, color = Bronce)
+        Text("◇", style = MaterialTheme.typography.displayMedium, color = Oro)
         Spacer(Modifier.height(8.dp))
-        Text(message, style = MaterialTheme.typography.bodyMedium, color = LinoSuave, textAlign = TextAlign.Center)
+        Text(message, style = MaterialTheme.typography.bodyMedium, color = Apagado, textAlign = TextAlign.Center)
     }
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFF171C2A)
+@Preview(showBackground = true, backgroundColor = 0xFF100C12)
 @Composable
 private fun LoadingPreview() = GodsUnmadeTheme { LoadingView() }
 
-@Preview(showBackground = true, backgroundColor = 0xFF171C2A)
+@Preview(showBackground = true, backgroundColor = 0xFF100C12)
 @Composable
 private fun ErrorPreview() = GodsUnmadeTheme { ErrorView("No se pudo leer el archivo", {}) }
 
-@Preview(showBackground = true, backgroundColor = 0xFF171C2A)
+@Preview(showBackground = true, backgroundColor = 0xFF100C12)
 @Composable
 private fun EmptyPreview() = GodsUnmadeTheme { EmptyView("Sin resultados") }

@@ -33,10 +33,10 @@ fun CharacterDetailScreen(
                     CharacterAvatar(p, height = 340.dp)
                     Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                         RegistroLabel(p.registro)
-                        Text(p.nombre.uppercase(), style = MaterialTheme.typography.headlineMedium, color = Lino)
+                        Text(p.nombre.uppercase(), style = MaterialTheme.typography.headlineMedium, color = Marfil)
                         if (p.etiqueta != null) TagLabel(p.etiqueta)
                         OrnamentDivider(Modifier.padding(vertical = 4.dp))
-                        Text(p.descripcion, style = MaterialTheme.typography.bodyLarge, color = LinoSuave)
+                        Text(p.descripcion, style = MaterialTheme.typography.bodyLarge, color = Apagado)
                         if (p.objetivo != null) ObjectiveBlock(p.objetivo)
                     }
                 }
@@ -45,7 +45,7 @@ fun CharacterDetailScreen(
     }
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFF171C2A)
+@Preview(showBackground = true, backgroundColor = 0xFF100C12)
 @Composable
 private fun CharacterDetailPreview() = GodsUnmadeTheme {
     val c = Character("custodio", "Custodio", "005", "jefe", "JEFE DE LA DEMO", "Guardián principal de la demo.", null, "custodio")

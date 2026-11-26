@@ -60,7 +60,7 @@ fun CharactersScreen(
     }
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFF171C2A)
+@Preview(showBackground = true, backgroundColor = 0xFF100C12)
 @Composable
 private fun CharactersPreview() = GodsUnmadeTheme {
     CharactersScreen(

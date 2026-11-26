@@ -39,9 +39,9 @@ fun drawableFor(name: String?): Int? = when (name) {
 @Composable
 fun OrnamentDivider(modifier: Modifier = Modifier) {
     Row(modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
-        Box(Modifier.width(32.dp).height(1.dp).background(Bronce.copy(alpha = 0.6f)))
-        Text("  ◆ ◇ ◆  ", style = MaterialTheme.typography.labelSmall, color = Bronce)
-        Box(Modifier.width(32.dp).height(1.dp).background(Bronce.copy(alpha = 0.6f)))
+        Box(Modifier.width(32.dp).height(1.dp).background(Cobre.copy(alpha = 0.6f)))
+        Text("  ◆ ◇ ◆  ", style = MaterialTheme.typography.labelSmall, color = Oro)
+        Box(Modifier.width(32.dp).height(1.dp).background(Cobre.copy(alpha = 0.6f)))
     }
 }
 
@@ -58,15 +58,15 @@ fun LoreHeader(kicker: String, title: String, body: String, modifier: Modifier =
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(10.dp),
         ) {
-            Text(kicker.uppercase(), style = MaterialTheme.typography.labelMedium, color = Bronce)
-            Text(title.uppercase(), style = MaterialTheme.typography.displayMedium, color = Lino, textAlign = TextAlign.Center)
+            Text(kicker.uppercase(), style = MaterialTheme.typography.labelMedium, color = Oro)
+            Text(title.uppercase(), style = MaterialTheme.typography.displayMedium.copy(brush = GradienteTitulo), textAlign = TextAlign.Center)
             OrnamentDivider()
-            Text(body, style = MaterialTheme.typography.bodyMedium, color = LinoSuave, textAlign = TextAlign.Center)
+            Text(body, style = MaterialTheme.typography.bodyMedium, color = Apagado, textAlign = TextAlign.Center)
         }
     }
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFF171C2A)
+@Preview(showBackground = true, backgroundColor = 0xFF100C12)
 @Composable
 private fun LoreHeaderPreview() = GodsUnmadeTheme {
     LoreHeader("Registro de personajes", "Personajes", "Un ser marcado por grietas divinas…")

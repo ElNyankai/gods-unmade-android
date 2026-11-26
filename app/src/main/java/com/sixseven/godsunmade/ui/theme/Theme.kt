@@ -4,29 +4,29 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 
-// colores que usa Material para toda la app
+// colores de Material con la paleta nueva
 private val EsquemaOscuro = darkColorScheme(
-    primary = Arcilla,
-    onPrimary = Lino,
-    primaryContainer = ArcillaOscura,
-    onPrimaryContainer = Lino,
-    secondary = Bronce,
+    primary = Peligro,
+    onPrimary = Sombra,
+    primaryContainer = OxidoOscuro,
+    onPrimaryContainer = Marfil,
+    secondary = Cobre,
     onSecondary = Sombra,
-    secondaryContainer = SuperficieAlta,
-    onSecondaryContainer = BronceClaro,
-    tertiary = BronceClaro,
-    background = Fondo,
-    onBackground = Lino,
-    surface = Superficie,
-    onSurface = Lino,
-    surfaceVariant = SuperficieAlta,
-    onSurfaceVariant = LinoSuave,
-    outline = Bronce,
-    outlineVariant = Piedra,
-    error = Arcilla,
+    secondaryContainer = MarronSombra,
+    onSecondaryContainer = Oro,
+    tertiary = Oro,
+    background = Sombra,
+    onBackground = Marfil,
+    surface = Ciruela,
+    onSurface = Marfil,
+    surfaceVariant = MarronSombra,
+    onSurfaceVariant = Apagado,
+    outline = Cobre,
+    outlineVariant = Apagado,
+    error = Peligro,
 )
 
-// como la web es oscura, aqui siempre usamos el tema oscuro
+// la web es oscura, asi que la app siempre usa el tema oscuro
 @Composable
 fun GodsUnmadeTheme(content: @Composable () -> Unit) {
     MaterialTheme(colorScheme = EsquemaOscuro, typography = Typography, content = content)
